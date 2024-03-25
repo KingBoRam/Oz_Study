@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선택자 더 알아보기</title>
+    <style>
+      img[width*='2'] {
+        border: 5px solid red;
+      }
+      p > em {
+        color: blue;
+      }
+      #sam ~ p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="images/키키.jpeg" width="120" alt="토토로" />
+    <img src="images/키키.jpeg" width="120" />
+    <img id="sam" src="images/키키.jpeg" width="120" />
+    <p>토토로 귀엽좌나</p>
+    <p>토토로 귀엽좌나나</p>
+    <p>토토로 <em>귀엽</em>좌나나나</p>
+    <p>토토로 귀엽좌나나나나</p>
+  </body>
+</html>

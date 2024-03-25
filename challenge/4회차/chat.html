@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA_Compatible" content="IE=edge" />
+    <title>채팅방 만들기</title>
+    <link href="chat.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- 굳이 바디가 아니라 div를 만들어서 적용하는 ㅣㅇ유가 뭐징? -->
+    <div class="container">
+      <main class="chat-screen">
+        <section class="chat-screen_bar">
+          <div class="user">
+            <div class="user_column">
+              <div class="user_pic"></div>
+            </div>
+            <div class="user_column">
+              <p class="user_nick">친구</p>
+              <p class="user_count">2</p>
+            </div>
+          </div>
+          <div class="chat-screen_settingtext">
+            <p class="chat-screen_welcome">채팅창에 입장하였습니다.</p>
+          </div>
+        </section>
+      </main>
+      <form class="chat-form">
+        <section class="chat-form_field">
+          <textarea class="chat-form_msg"></textarea>
+          <input type="submit" value="전 송" class="chat-form_btn" />
+        </section>
+      </form>
+    </div>
+  </body>
+</html>
+<!-- 태그 이름으론 정확한 역할을 알 지 못하기때문에 class를 쓴거고 스타일 쓸때도 태그선택자보다 클래스선택자가 명시성이 더 좋음 -->

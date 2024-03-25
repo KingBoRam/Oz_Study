@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'TTLaundryGothicB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2')
+    format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+/* 전체적인셋팅 */
+* {
+  /* 크기를 고정하고 싶어서! */
+  box-sizing: border-box;
+  font-family: 'TTLaundryGothicB';
+}
+html {
+  /* 모든 화면을 채워서 쓰겠다 */
+  height: 100%;
+}
+body {
+  height: 100%;
+  /* 445인이유 = 채팅창이랑 버튼이 합햇더니 445 */
+  /* 바디에 기본으로 있는 마진 삭제 + 0은 px 생략 가능 */
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 470px;
+  height: 100%;
+  background-color: rgb(209, 207, 255);
+  border: 1px solid rgb(161, 161, 161);
+}
+/* 스크린 크기 조정 = main을 말하는것 */
+.chat-screen {
+  /* 전체 크기에서 120px = 채팅입력창만큼으 ㅣ크기만 빼고 차지하라 */
+  height: calc(100% - 120px);
+  position: relative;
+}
+/* 유저정보표시되는부분 */
+.user {
+  background-color: white;
+  padding: 16px;
+  height: 80px;
+}
+.user_column {
+  float: left;
+}
+.user_pic {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 10px;
+  /* background-color: rgb(147, 147, 251); */
+  background-image: url(images/이름좀.png);
+  background-size: 50px 50px;
+}
+.user_nick,
+.user_count {
+  margin: 5px;
+}
+.user_count {
+  font-size: 12px;
+  color: gray;
+}
+/* 채팅입력창 */
+.chat-form {
+  height: 120px;
+  background-color: white;
+}
+.chat-form_field {
+  /* 크기 적용한다고 달라지는건 없는데 그냥 컨테이너가 여러개라 같은 스타일 적용한것 */
+  height: 120px;
+}
+.chat-form_msg {
+  /* 버튼을 120으로 할거라 빼줌 */
+  width: calc(100%-120px);
+  height: 120px;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  resize: none;
+  float: left;
+}
+.chat-form_msg:focus {
+  outline: none;
+}
+.chat-form_btn {
+  float: right;
+  width: 120px;
+  height: 120px;
+  border: none;
+  background-color: rgb(147, 147, 251);
+  font-size: 18px;
+  color: white;
+  font-size: 25px;
+}
+.chat-form_btn:active {
+  background-color: rgb(99, 99, 200);
+}
+.chat-screen_settingtext {
+  display: flex;
+  justify-content: center;
+}
+.chat-screen_welcome {
+  width: 100%;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  position: absolute;
+  bottom: 30px;
+  color: white;
+  background-color: rgba(118, 118, 118, 0.3);
+}
+.user_column:nth-child(n):hover {
+  filter: brightness(1.3);
+}
+/* 채팅방 꾸며서 과제로 제출해주세요 */
