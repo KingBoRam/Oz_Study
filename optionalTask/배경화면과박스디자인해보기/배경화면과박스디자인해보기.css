@@ -1,0 +1,32 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.background {
+  height: 100%;
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center;
+  background: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+}
+img {
+  display: block;
+}
+.circle {
+  background-color: white;
+  width: 230px;
+  height: 230px;
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center;
+  border-radius: 115px;
+  border: 10px dashed red;
+}

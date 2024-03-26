@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+ul {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+  height: 200px;
+  border: 5px solid red;
+}
+li {
+  background-color: yellowgreen;
+}
+li:nth-child(2n) {
+  background-color: coral;
+}
+li:nth-child(2) {
+  flex-shrink: 2;
+}

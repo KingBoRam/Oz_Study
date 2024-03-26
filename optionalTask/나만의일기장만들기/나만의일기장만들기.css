@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'KCC-Hanbit';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/KCC-Hanbit.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: 'KCC-Hanbit';
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  width: 500px;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #c2e1ce;
+  text-align: center;
+}
+h1 {
+  border: 3px double rgb(0, 0, 0);
+  background-color: #83c59c;
+  padding: 20px;
+}
+.date_feeling {
+  border: 3px double rgb(0, 0, 0);
+  width: 400px;
+  margin: auto;
+  text-align: end;
+  padding-right: 10px;
+  font-size: 13px;
+}
+.pic {
+  border: 3px double rgb(0, 0, 0);
+  width: 400px;
+  height: 250px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mypicture {
+  width: 350px;
+  height: 200px;
+}
+.content > div {
+  margin-bottom: 20px;
+}
+.write {
+  border: 3px double rgb(0, 0, 0);
+  width: 400px;
+  margin: auto;
+  padding: 30px;
+}
+#spec {
+  color: hotpink;
+  font-size: 20px;
+  text-decoration: red wavy underline;
+}
