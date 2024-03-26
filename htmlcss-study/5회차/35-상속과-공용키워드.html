@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>상속과 공용키워드</title>
+    <style>
+      .list {
+        /* 상속가능 */
+        color: brown;
+        font-style: italic;
+        font-weight: 900;
+        /* 상속불가능 */
+        border: 3px dashed green;
+        padding: 0;
+      }
+      ul {
+        border: inherit;
+      }
+      li:nth-child(3) {
+        color: initial;
+        font-style: initial;
+        font-weight: initial;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>마라톤 대회 참가 기록</h2>
+    <div class="list">
+      <ul>
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+        <li>4444</li>
+      </ul>
+    </div>
+  </body>
+</html>

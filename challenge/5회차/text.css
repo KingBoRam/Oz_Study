@@ -1,0 +1,79 @@
+.chat-screen_texts {
+  /* 목록이지만 스타일은 필요없으니까없애자 */
+  padding: 0;
+  list-style-type: none;
+  font-size: 15px;
+  position: relative;
+}
+.chat-screen_texts > .text {
+  background-color: rgb(255, 241, 255);
+  width: 280px;
+  height: 50px;
+  margin: 0 0 15px 0;
+  padding: 10px;
+  border-radius: 8px;
+  line-height: 30px; /* 높이50 - 패딩20 */
+  position: relative;
+  left: 20px;
+}
+.chat-screen_texts > .text::before {
+  content: '';
+  border-right: 16px solid rgb(255, 241, 255);
+  border-bottom: 16px solid transparent; /*색상을투명하게*/
+  position: absolute;
+  top: 10px;
+  left: -10px;
+}
+.chat-screen_texts > .text:hover {
+  background-color: rgb(255, 218, 218);
+  transition: background-color 1500ms 200ms ease-in;
+}
+.chat-screen_texts > .text:hover::before {
+  border-right: 16px solid rgb(255, 218, 218);
+  transition: border-right 1500ms 200ms ease-in;
+}
+.chat-screen_texts > .text::after {
+  content: '오후 14:33분';
+  color: black;
+  font-size: 9px;
+  color: gray;
+  position: absolute;
+  right: 5px;
+  top: 42px;
+}
+.chat-screen_texts > .answer {
+  background-color: white;
+  width: 280px;
+  height: 50px;
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  line-height: 30px; /* 높이50 - 패딩20 */
+  position: absolute;
+  right: 20px;
+}
+.chat-screen_texts > .answer::after {
+  content: '오후 14:35분';
+  color: black;
+  font-size: 9px;
+  color: gray;
+  position: absolute;
+  right: 5px;
+  top: 42px;
+}
+.chat-screen_texts > .answer::before {
+  content: '';
+  border-left: 16px solid white;
+  border-bottom: 16px solid transparent;
+  position: absolute;
+  top: 10px;
+  right: -10px;
+}
+.chat-screen_texts > .answer:hover {
+  background-color: rgb(229, 229, 229);
+  transition: background-color 1500ms 200ms ease-in;
+}
+.chat-screen_texts > .answer:hover::before {
+  border-left: 16px solid rgb(229, 229, 229);
+  transition: border-left 1500ms 200ms ease-in;
+}
