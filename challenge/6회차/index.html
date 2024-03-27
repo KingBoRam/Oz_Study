@@ -25,6 +25,12 @@
       .flex {
         display: flex;
       }
+      /* 메인의 공통스타일 */
+      .main {
+        /* header가 4rem이라 그만큼의 여유가 있어야 서로 겹치지 않음
+        아래는 그냥 여유공간 */
+        padding: 4rem 0 5rem;
+      }
     </style>
   </head>
   <body>
@@ -70,7 +76,259 @@
           </div>
         </div>
       </header>
-      <!-- 여기까지가 헤더를 클론코딩 하기 위한 코드 -->
+      <!-- 여기까지가 헤더를 클론코딩 하기 위한 코드 
+      이 아래 컨텐츠들은 다 스크롤로 연결이 되기 때문에 이 밑에는 다 묶어서 한다-->
+      <main class="main">
+        <section class="info">
+          <div class="info_text">
+            <h1>
+              우리 동네에서 찾는 <br />
+              딸기알바
+            </h1>
+            <p>
+              걸어서 10분거리 <br />
+              에 있는 알바들 여기 다 있어요.
+            </p>
+          </div>
+        </section>
+        <!-- 여기까지가 info부분 -->
+        <section class="notice">
+          <h2 class="notice_title">인기 딸기알바</h2>
+          <!-- 구인공고가 나열될 컨테이너 -->
+          <div class="notice_container flex">
+            <!-- 섹션안에서 주요 컨텐츠 하나를 아티클로 만듬 
+            아티클 하나당 공고 하나 아티클을 원하는만큼 복붙하는 방식으로 늘리면 됨-->
+            <article class="notice_item flex">
+              <!-- 썸네일 -->
+              <div class="notice_thumb"></div>
+              <div class="notice_content">
+                <div class="notice_content_title">
+                  딸기마켓 고객센터 단기계약직 모집(1달 계약직)
+                </div>
+                <div class="notice_content_address">
+                  주식회사 딸기서비스 - 울산광역시 동구 화정동
+                </div>
+                <div class="notice_content_pay">월급 3,000,000</div>
+              </div>
+            </article>
+            <article class="notice_item flex">
+              <!-- 썸네일 -->
+              <div class="notice_thumb"></div>
+              <div class="notice_content">
+                <div class="notice_content_title">
+                  딸기마켓 고객센터 단기계약직 모집(1달 계약직)
+                </div>
+                <div class="notice_content_address">
+                  주식회사 딸기서비스 - 울산광역시 동구 화정동
+                </div>
+                <div class="notice_content_pay">월급 3,000,000</div>
+              </div>
+            </article>
+            <article class="notice_item flex">
+              <!-- 썸네일 -->
+              <div class="notice_thumb"></div>
+              <div class="notice_content">
+                <div class="notice_content_title">
+                  딸기마켓 고객센터 단기계약직 모집(1달 계약직)
+                </div>
+                <div class="notice_content_address">
+                  주식회사 딸기서비스 - 울산광역시 동구 화정동
+                </div>
+                <div class="notice_content_pay">월급 3,000,000</div>
+              </div>
+            </article>
+            <article class="notice_item flex">
+              <!-- 썸네일 -->
+              <div class="notice_thumb"></div>
+              <div class="notice_content">
+                <div class="notice_content_title">
+                  딸기마켓 고객센터 단기계약직 모집(1달 계약직)
+                </div>
+                <div class="notice_content_address">
+                  주식회사 딸기서비스 - 울산광역시 동구 화정동
+                </div>
+                <div class="notice_content_pay">월급 3,000,000</div>
+              </div>
+            </article>
+            <article class="notice_item flex">
+              <!-- 썸네일 -->
+              <div class="notice_thumb"></div>
+              <div class="notice_content">
+                <div class="notice_content_title">
+                  딸기마켓 고객센터 단기계약직 모집(1달 계약직)
+                </div>
+                <div class="notice_content_address">
+                  주식회사 딸기서비스 - 울산광역시 동구 화정동
+                </div>
+                <div class="notice_content_pay">월급 3,000,000</div>
+              </div>
+            </article>
+            <article class="notice_item flex">
+              <!-- 썸네일 -->
+              <div class="notice_thumb"></div>
+              <div class="notice_content">
+                <div class="notice_content_title">
+                  딸기마켓 고객센터 단기계약직 모집(1달 계약직)
+                </div>
+                <div class="notice_content_address">
+                  주식회사 딸기서비스 - 울산광역시 동구 화정동
+                </div>
+                <div class="notice_content_pay">월급 3,000,000</div>
+              </div>
+            </article>
+          </div>
+          <div class="banner flex">
+            <div class="banner_text">
+              더덕알바 이용방법이 궁금하다면 <br />
+              지금 바로 알아보세요!
+            </div>
+            <button class="banner_button">이용방법 알아보기</button>
+          </div>
+          <h2 class="notice_title">인기 딸기알바</h2>
+          <!-- 구인공고가 나열될 컨테이너 -->
+          <div class="notice_container flex">
+            <!-- 섹션안에서 주요 컨텐츠 하나를 아티클로 만듬 
+            아티클 하나당 공고 하나 아티클을 원하는만큼 복붙하는 방식으로 늘리면 됨-->
+            <article class="notice_item flex">
+              <!-- 썸네일 -->
+              <div class="notice_thumb"></div>
+              <div class="notice_content">
+                <div class="notice_content_title">
+                  딸기마켓 고객센터 단기계약직 모집(1달 계약직)
+                </div>
+                <div class="notice_content_address">
+                  주식회사 딸기서비스 - 울산광역시 동구 화정동
+                </div>
+                <div class="notice_content_pay">월급 3,000,000</div>
+              </div>
+            </article>
+            <article class="notice_item flex">
+              <!-- 썸네일 -->
+              <div class="notice_thumb"></div>
+              <div class="notice_content">
+                <div class="notice_content_title">
+                  딸기마켓 고객센터 단기계약직 모집(1달 계약직)
+                </div>
+                <div class="notice_content_address">
+                  주식회사 딸기서비스 - 울산광역시 동구 화정동
+                </div>
+                <div class="notice_content_pay">월급 3,000,000</div>
+              </div>
+            </article>
+            <article class="notice_item flex">
+              <!-- 썸네일 -->
+              <div class="notice_thumb"></div>
+              <div class="notice_content">
+                <div class="notice_content_title">
+                  딸기마켓 고객센터 단기계약직 모집(1달 계약직)
+                </div>
+                <div class="notice_content_address">
+                  주식회사 딸기서비스 - 울산광역시 동구 화정동
+                </div>
+                <div class="notice_content_pay">월급 3,000,000</div>
+              </div>
+            </article>
+            <article class="notice_item flex">
+              <!-- 썸네일 -->
+              <div class="notice_thumb"></div>
+              <div class="notice_content">
+                <div class="notice_content_title">
+                  딸기마켓 고객센터 단기계약직 모집(1달 계약직)
+                </div>
+                <div class="notice_content_address">
+                  주식회사 딸기서비스 - 울산광역시 동구 화정동
+                </div>
+                <div class="notice_content_pay">월급 3,000,000</div>
+              </div>
+            </article>
+            <article class="notice_item flex">
+              <!-- 썸네일 -->
+              <div class="notice_thumb"></div>
+              <div class="notice_content">
+                <div class="notice_content_title">
+                  딸기마켓 고객센터 단기계약직 모집(1달 계약직)
+                </div>
+                <div class="notice_content_address">
+                  주식회사 딸기서비스 - 울산광역시 동구 화정동
+                </div>
+                <div class="notice_content_pay">월급 3,000,000</div>
+              </div>
+            </article>
+            <article class="notice_item flex">
+              <!-- 썸네일 -->
+              <div class="notice_thumb"></div>
+              <div class="notice_content">
+                <div class="notice_content_title">
+                  딸기마켓 고객센터 단기계약직 모집(1달 계약직)
+                </div>
+                <div class="notice_content_address">
+                  주식회사 딸기서비스 - 울산광역시 동구 화정동
+                </div>
+                <div class="notice_content_pay">월급 3,000,000</div>
+              </div>
+            </article>
+          </div>
+          <div class="banner flex">
+            <div class="banner_text">
+              더덕알바 이용방법이 궁금하다면 <br />
+              지금 바로 알아보세요!
+            </div>
+            <button class="banner_button">이용방법 알아보기</button>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <!-- 두가지 정도가 들어감 -->
+        <div class="footer_container">
+          <section class="footer_menu">
+            <div class="footer_apps">
+              <div class="footer_appdown">당근마켓 앱 다운로드</div>
+              <div class="footer_appbtn flex">
+                <button>App Store</button>
+                <button>Google Store</button>
+              </div>
+            </div>
+            <nav class="footer_nav flex">
+              <ul>
+                <li>중고거래</li>
+                <li>동네가게</li>
+                <li>더덕알바</li>
+                <li>부동산 직거래</li>
+                <li>중고차 직거래</li>
+              </ul>
+              <ul>
+                <li>딸기비지니스</li>
+                <li>채팅하기</li>
+              </ul>
+              <ul>
+                <li>자주 묻는 질문</li>
+                <li>회사 소개</li>
+                <li>인재 채용</li>
+              </ul>
+            </nav>
+          </section>
+          <section class="footer_info">
+            <div>
+              <strong>대표</strong> 김보람 ㅣ
+              <strong>사업자번호</strong> 123-456-7890
+            </div>
+            <div>
+              <strong>직업정보제공사업 신고번호</strong> 2024-울산딸기-0512
+            </div>
+            <div><strong>주소</strong> 울산광역시 동구 화정동 (딸기서비스)</div>
+            <div>
+              <strong>전화</strong> 1588-8851 ㅣ
+              <strong>고객문의</strong>ram123@strservice.com
+            </div>
+            <p>
+              <strong>이용약관</strong>&nbsp;&nbsp;&nbsp;
+              <strong style="color: black">개인정보처리방침</strong>
+              <strong>위치기반서비스 이용약관</strong>
+              <strong>이용자보호 비전과 계획</strong>
+            </p>
+          </section>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

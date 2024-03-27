@@ -1,0 +1,39 @@
+.info {
+  width: 100%;
+  height: 19.6878rem;
+  background-color: rgb(255, 173, 173);
+}
+.info_text {
+  /* 이보다 커질수는 없지만 화면크기에 따라 작아져야 하기때문에
+    (당근 마켓 자체가 화면이 작아질때 반응이 일어남) max-width */
+  max-width: 48rem;
+  /* 가운데정렬 */
+  margin: auto;
+  padding: 3rem 1rem 0;
+}
+.info_text h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 3.2rem;
+}
+.info_text p {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.5em;
+}
+/* 일정사이즈가 작아질때 글자가 작아지면서 p가 사라짐 */
+@media screen and (max-width: 768px) {
+  .info {
+    height: 18.375rem;
+  }
+  .info_text {
+    padding: 1.5rem 1rem 0;
+  }
+  .info_text h1 {
+    line-height: 2rem;
+    font-size: 1.5rem;
+  }
+  .info_text p {
+    display: none;
+  }
+}

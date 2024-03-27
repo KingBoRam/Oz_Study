@@ -1,0 +1,57 @@
+/* 일단 양쪽 공백부터 만들자 */
+.notice {
+  max-width: 48rem;
+  margin: auto;
+}
+.notice_title {
+  font-size: 1.625rem;
+  margin: 3.75rem 0 2.5rem;
+  line-height: 1.5;
+}
+.notice_container {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.notice_item {
+  padding: 1.25rem 0;
+  /* 안의 아이템들이 같은 크기를 유지하도록 기본값을줌 */
+  flex-basis: 48%;
+}
+/* 아이템 안에 있는 아이템들도 flex아이템으로 지정되어있어서
+걔들도 크기지정을 해줘야함 */
+.notice_thumb {
+  /* 기본 width에서 그거보다 작아질 수 없음 */
+  min-width: 6.75rem;
+  min-height: 6.75rem;
+  background-color: rgb(255, 103, 103);
+}
+.notice_content {
+  margin-left: 1rem;
+}
+.notice_content_title {
+  line-height: 1.32;
+  font-size: 1.125rem;
+}
+.notice_content_address {
+  line-height: 1.4;
+  font-size: 0.875rem;
+  color: rgb(164, 164, 164);
+}
+.notice_content_pay {
+  font-weight: 700;
+}
+/* 이제 반응형웹으로 글자 좀 작아지고 768아래가되며 한줄로 되는거 */
+@media screen and (max-width: 768px) {
+  .notice {
+    padding: 0 1rem 1.25rem;
+  }
+  .notice_title {
+    font-size: 1.25rem;
+    margin: 2.5rem 0 1.5rem;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+  .notice_container {
+    display: block;
+  }
+}
