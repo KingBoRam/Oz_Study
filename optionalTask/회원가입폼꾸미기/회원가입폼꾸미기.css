@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container2 {
+  width: 500px;
+  height: 600px;
+  text-align: center;
+  background-color: rgb(255, 235, 254);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow:
+    5px 5px rgb(255, 18, 18),
+    10px 10px rgb(255, 182, 85),
+    15px 15px yellow,
+    20px 20px green,
+    25px 25px blue;
+}
+.inputform input,
+.region {
+  width: 300px;
+  height: 40px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.phone {
+  width: 90px;
+  height: 40px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.certi {
+  position: relative;
+  left: 75px;
+  margin-bottom: 10px;
+}
+.certi2 {
+  position: relative;
+  left: 102px;
+  margin-bottom: 10px;
+}
+
+.submit {
+  width: 300px;
+  height: 40px;
+  margin-top: 10px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+/* div를 처음부터 구성을 잘 해야함에 필요성을 느꼇다!!!@@@
+엉망 진창으로 만들어놓으니까 뭐 어떻게 적용해야 할지도 너무 햇갈리고
+구성을 제대로 짜질 않으니까 엉망진창으로 구색맞추기에 급급했따 ㅜ
+무엇보다 더러워서 다시 만지고 싶지 않다 새로 하는게 낫다고 느낄정도 */

@@ -3,53 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
-    <title>회원가입 폼 만들어보기_예시1</title>
+    <link rel="stylesheet" href="회원가입폼꾸미기.css" />
+    <title>회원가입 폼 꾸미기</title>
   </head>
   <body>
-    <header>
-      <h1>람뽀네 회원가입</h1>
-    </header>
-    <main>
-      <form>
-        <div>
-          <input
-            type="email"
-            placeholder="이메일을 입력해주세요"
-            name="emial"
-          /><br />
-          <input type="" placeholder="이름을 입력해주세요" name="name" /><br />
-          <input
-            type=""
-            placeholder="비밀번호를 입력해주세요"
-            name="password"
-          /><br />
-          <input
-            type=""
-            placeholder="비밀번호를 다시 입력해주세요"
-            name="repassword"
-          /><br />
-          <input type="" name="phone" />- <input type="" name="phone" />-
-          <input type="" name="phone" />
-        </div>
-        <div>000000</div>
-        <div>
-          <button disabled>인증번호 전송</button>
-        </div>
-        <div>3:00</div>
-        <button disabled>인증확인</button>
-        <div>
-          <select>
-            <option>지역을 선택해주세요</option></select
-          ><br />
-        </div>
-        <input type="radio" id="women" name="gender" />
-        <label for="women">여성</label>
-        <input type="radio" id="men" name="gender" />
-        <label for="men">남성</label>
-        <div>
-          <input type="submit" value="가입하기" />
-        </div>
-      </form>
-    </main>
+    <div class="container">
+      <div class="container2">
+        <header>
+          <h1>람뽀네 회원가입</h1>
+        </header>
+        <main>
+          <form>
+            <div class="inputform">
+              <input
+                type="email"
+                placeholder="이메일을 입력해주세요"
+                name="emial"
+              /><br />
+              <input
+                type="text"
+                placeholder="이름을 입력해주세요"
+                name="name"
+              /><br />
+              <input
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+                name="password"
+              /><br />
+              <input
+                type="password"
+                placeholder="비밀번호를 다시 입력해주세요"
+                name="repassword"
+              /><br />
+            </div>
+            <div>
+              <input class="phone" type="text" name="phone" placeholder="010" />
+              -
+              <input
+                class="phone"
+                type="text"
+                name="phone"
+                placeholder="1234"
+              />
+              -
+              <input
+                class="phone"
+                type="text"
+                name="phone"
+                placeholder="5678"
+              />
+            </div>
+            <div class="certi">
+              000000
+              <button>인증번호 전송</button>
+            </div>
+            <div class="certi2">
+              3:00
+              <button disabled>인증확인</button>
+            </div>
+            <div>
+              <select class="region">
+                <option>지역을 선택해주세요</option>
+              </select>
+            </div>
+            <div class="gender">
+              <input type="radio" id="women" name="gender" />
+              <label for="women">여성</label>
+              <input type="radio" id="men" name="gender" />
+              <label for="men">남성</label>
+            </div>
+            <div>
+              <input class="submit" type="submit" value="가입하기" />
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
   </body>
 </html>

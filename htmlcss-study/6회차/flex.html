@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>플렉스박스 레이아웃</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      ul {
+        display: flex;
+        padding: 0;
+        list-style-type: none;
+        height: 200px;
+        align-items: center;
+      }
+      li {
+        background-color: tomato;
+      }
+      li:nth-child(2n) {
+        background-color: teal;
+      }
+      li:nth-child(2) {
+        /* flex-grow: 1; */
+      }
+      li:nth-child(4) {
+        /* flex-grow: 1;
+        flex-shrink: 2; */
+      }
+      li:nth-child(2n-1) {
+        /* flex-basis: 200px; */
+        flex: 1 1 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>김보람이 아는 동물들</h2>
+    <ul>
+      <li>사자</li>
+      <li>호랑이</li>
+      <li>원숭이</li>
+      <li>말</li>
+      <li>코끼리</li>
+    </ul>
+  </body>
+</html>
