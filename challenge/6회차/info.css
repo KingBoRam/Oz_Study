@@ -3,13 +3,23 @@
   height: 19.6878rem;
   background-color: rgb(255, 173, 173);
 }
+.info_container {
+  max-width: 48rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
 .info_text {
   /* 이보다 커질수는 없지만 화면크기에 따라 작아져야 하기때문에
     (당근 마켓 자체가 화면이 작아질때 반응이 일어남) max-width */
   max-width: 48rem;
   /* 가운데정렬 */
-  margin: auto;
   padding: 3rem 1rem 0;
+}
+.info_img {
+  width: 18rem;
+  position: relative;
+  top: 2rem;
 }
 .info_text h1 {
   margin: 0;
@@ -35,5 +45,11 @@
   }
   .info_text p {
     display: none;
+  }
+  .info_img {
+    width: 15rem;
+    position: relative;
+    top: 3rem;
+    right: 3rem;
   }
 }
