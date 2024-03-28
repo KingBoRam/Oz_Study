@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>번개장터 클론코딩 하기</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 16px;
+        height: 100%;
+      }
+      body {
+        margin: 0;
+      }
+      .flex {
+        display: flex;
+      }
+    </style>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="sidebar.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header_login_content flex">
+          <div class="header_login flex">
+            <div class="header_login_left">
+              <span
+                ><img
+                  class="header_img"
+                  src="images/logo.svg"
+                  alt="로고"
+                />앱다운로드</span
+              >
+              <span
+                ><img
+                  class="header_img"
+                  src="images/star.svg"
+                  alt="별"
+                />즐겨찾기</span
+              >
+            </div>
+            <div class="header_login_right">
+              <span>로그인/회원가입</span>
+              <span>내상점</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="header_search_container">
+        <div class="header_search_content">
+          <div class="header_search flex">
+            <div class="header_search_logo">
+              <img src="images/thunder.svg" alt="번개" />
+            </div>
+            <div class="header_search_input_content flex">
+              <input
+                class="header_search_input"
+                type="text"
+                placeholder="상품명, 지역명, @상점명 입력"
+              />
+              <img src="images/glass.png" alt="glass" />
+            </div>
+            <div class="header_search_link flex">
+              <a href="#"
+                ><img
+                  class="header_img"
+                  src="images/money.png"
+                  alt=""
+                />판매하기</a
+              >
+              <a href="#"
+                ><img class="header_img" src="images/person.png" alt="사람" />
+                내상점</a
+              >
+              <a href="#"
+                ><img
+                  class="header_img"
+                  src="images/monitorthunder.png"
+                  alt=""
+                />번개톡</a
+              >
+            </div>
+          </div>
+          <div class="header_list flex">
+            <input class="header_list_btn" type="button" value="&#9776;" />
+            <span class="header_list_text">번개장터 판매자 센터</span>
+          </div>
+        </div>
+        <aside class="aside">
+          <div class="sidebar_content">
+            <div class="sidebar_content_jjim">찜한상품</div>
+            <div class="sidebar_content_recent">
+              최근본상품
+              <div
+                style="display: flex; justify-content: center; margin-top: 10px"
+              >
+                <div class="sidebar_content_recent_under"></div>
+              </div>
+            </div>
+            <div class="sidebar_content_Top">TOP</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>
