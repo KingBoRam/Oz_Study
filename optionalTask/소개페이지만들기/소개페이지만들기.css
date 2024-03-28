@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'ROKABold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.1/ROKABold.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+  font-family: 'yg-jalnan', sans-serif, monospace;
+  font-size: 18px;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  background-color: rgb(164, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+header,
+main,
+footer {
+  background-color: black;
+  width: 300px;
+  height: 400px;
+  letter-spacing: 2px;
+}
+main {
+  width: 450px;
+}
+header {
+  border-top-left-radius: 200px;
+  border-bottom-left-radius: 200px;
+}
+footer {
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 200px;
+}
+.header_img_container {
+  position: relative;
+}
+.header_img {
+  width: 500px;
+  position: absolute;
+  right: -120px;
+  top: 60px;
+}
+/* .main_introduce_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+.main_introduce_text,
+.footer_url {
+  height: 100%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  border-left: 1px solid rgb(164, 0, 0);
+}
+
+a:link,
+a:visited {
+  color: rgb(0, 103, 46);
+  text-decoration: none;
+}
