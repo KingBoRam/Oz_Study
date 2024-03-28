@@ -77,9 +77,38 @@ footer {
   align-items: start;
   border-left: 1px solid rgb(164, 0, 0);
 }
-
+span {
+  display: inline-block;
+  font-size: 11px;
+}
 a:link,
 a:visited {
-  color: rgb(0, 103, 46);
+  color: rgb(255, 251, 0);
   text-decoration: none;
+}
+.footer_url a {
+  animation: changing_text_color 9s linear infinite;
+}
+@keyframes changing_text_color {
+  0% {
+    color: red;
+  }
+  16% {
+    color: orange;
+  }
+  32% {
+    color: yellow;
+  }
+  48% {
+    color: green;
+  }
+  64% {
+    color: blue;
+  }
+  80% {
+    color: navy;
+  }
+  100% {
+    color: purple;
+  }
 }
