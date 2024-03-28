@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'NPSfontBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2')
+    format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  font-family: 'NPSfontBold';
+  font-size: 40px;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: white;
+}
+.orange,
+.yellow,
+.green,
+.blue,
+.navy,
+.purple {
+  display: none;
+}
+@media screen and (max-width: 1092px) {
+  .container {
+    background-color: orange;
+  }
+  .red {
+    display: none;
+  }
+  .orange {
+    display: block;
+  }
+}
+@media screen and (max-width: 909px) {
+  .container {
+    background-color: yellow;
+    color: black;
+  }
+  .orange {
+    display: none;
+  }
+  .yellow {
+    display: block;
+  }
+}
+@media screen and (max-width: 726px) {
+  .container {
+    background-color: green;
+    color: white;
+  }
+  .yellow {
+    display: none;
+  }
+  .green {
+    display: block;
+  }
+}
+@media screen and (max-width: 543px) {
+  .container {
+    background-color: blue;
+  }
+  .green {
+    display: none;
+  }
+  .blue {
+    display: block;
+  }
+}
+@media screen and (max-width: 360px) {
+  .container {
+    background-color: navy;
+  }
+  .blue {
+    display: none;
+  }
+  .navy {
+    display: block;
+  }
+}
+@media screen and (max-width: 177px) {
+  .container {
+    background-color: purple;
+  }
+  .navy {
+    display: none;
+  }
+  .purple {
+    display: block;
+  }
+}
