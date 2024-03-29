@@ -35,4 +35,5 @@
 .sidebar_content {
   position: absolute;
   top: 110px;
+  right: calc(50% - 617px);
 }
