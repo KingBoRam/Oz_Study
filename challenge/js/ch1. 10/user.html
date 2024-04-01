@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>사용자 정보 입력받고 출력하기</title>
+    <style>
+      #animal {
+        text-decoration: red wavy underline;
+      }
+    </style>
   </head>
   <body>
     <h1 id="name"></h1>
-    <p id="hobby"></p>
-    <p id="song"></p>
-
+    <p id="animal"></p>
+    <p id="fruit"></p>
     <script>
       const nameElement = document.querySelector('#name');
       let name = prompt('당신의 이름은?');
       nameElement.textContent = name;
 
-      const hobbyElement = document.querySelector('#hobby');
-      let hobby = prompt('당신이 좋아하는 동물은?');
-      hobbyElement.textContent = `저는 ${hobby}을(를) 좋아해요.`;
+      const animalElement = document.querySelector('#animal');
+      let animal = prompt('당신이 좋아하는 동물은?');
+      animalElement.textContent = `저는 ${animal}를(을) 좋아해요.`;
 
-      document.querySelector('#song').textContent =
+      document.querySelector('#fruit').textContent =
         `좋아하는 과일은 ${prompt('좋아하는 과일은?')}입니다.`;
 
       const obj = {};
