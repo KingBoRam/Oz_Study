@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM 소개 & 콘텐츠 변경하기</title>
+  </head>
+  <body>
+    <p>a</p>
+    <p class="comment">b</p>
+    <p class="comment" id="c">c</p>
+    <script>
+      // 입력 처리 출력
+      const p1 = document.querySelector('p');
+      const p2 = document.querySelector('.comment');
+      const p3 = document.querySelector('#c');
+
+      console.log(p1.textContent);
+      console.log(p2.textContent);
+      console.log(p3.textContent);
+
+      p1.textContent = 'aa';
+      p2.textContent = 'bb';
+      p3.textContent = 'cc';
+
+      console.log(p1.textContent);
+      console.log(p2.textContent);
+      console.log(p3.textContent);
+    </script>
+  </body>
+</html>
