@@ -1,0 +1,74 @@
+.upper-header,
+.lower-header {
+  border-bottom: 0.5px solid rgb(221, 221, 221);
+  height: 63px;
+  align-items: center;
+  justify-content: center;
+}
+.upper-header-content {
+  width: 1230px;
+  justify-content: space-between;
+  align-items: center;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+.header__left__naver {
+  font-size: 17px;
+  color: black;
+  font-weight: 900;
+}
+.header__left__webtoon {
+  font-size: 25px;
+  color: black;
+  font-weight: 900;
+}
+.header__left__text {
+  font-size: 20px;
+  color: rgb(212, 212, 212);
+  font-weight: 300;
+}
+.header__left__bar {
+  display: inline-block;
+  width: 1px;
+  height: 13px;
+  background-color: rgb(212, 212, 212);
+}
+.header__right {
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.header__right__search {
+  width: 268px;
+  height: 35px;
+  border: 0.5px solid rgb(212, 212, 212);
+}
+.search_text {
+  flex-grow: 1;
+  border: none;
+  font-size: 16px;
+  padding-left: 10px;
+}
+.search_text::placeholder {
+  color: rgb(189, 189, 189);
+  font-weight: 200;
+}
+.search__glass {
+  border: none;
+  background-color: transparent;
+}
+.login-btn {
+  align-self: center;
+  background-color: white;
+  border: 1px solid rgb(212, 212, 212);
+  font-size: 13px;
+  color: rgb(161, 161, 161);
+  padding: 3px;
+}
+.login-menu {
+  border: none;
+  background-color: transparent;
+  font-size: 35px;
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>네이버 클론코딩</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .flex {
+        display: flex;
+      }
+      .wrap {
+        /*min-width보다 maxwidth를 사용해봐서 내가 쓰기에 가운데 정렬이나 크기조절이 쉽기는 하지만
+        크기조절이 목적이라면 하위목록들의 크기를 직접 지정해주면되고.
+        대체적으로 화면은 큰것에서 작은것을 뺴는것보다 작은것에서 큰것을 추가해나가는게 쉽기때문에
+        미디어쿼리에서도 주로 min-width를 많이 사용하는게 편리하다고 함.*/
+        width: 100%;
+        height: 100%;
+        min-width: 1230px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="/optionalTask/htmlcss/번개장터클론코딩하기/네이버도해보자/components/header.css"
+    />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="header">
+        <div class="upper-header flex">
+          <div class="upper-header-content flex">
+            <h1 class="header__left">
+              <a href="#" class="header__left__naver">NAVER</a>
+              <a href="#" class="header__left__webtoon">웹툰</a>
+              <span class="header__left__bar"></span>
+              <a href="#" class="header__left__text">웹소설</a>
+              <span class="header__left__bar"></span>
+              <a href="#" class="header__left__text">시리즈</a>
+            </h1>
+            <div class="header__right flex">
+              <div class="header__right__search flex">
+                <input
+                  type="text"
+                  class="search_text"
+                  placeholder="제목/작가로 검색할 수 있습니다."
+                />
+                <input type="button" value="&#128269;" class="search__glass" />
+              </div>
+              <input type="button" value="로그인" class="login-btn" />
+              <input type="button" value="&#9776;" class="login-menu" />
+            </div>
+          </div>
+        </div>
+        <div class="lower-header">asdf</div>
+      </header>
+    </div>
+    <script></script>
+  </body>
+</html>
