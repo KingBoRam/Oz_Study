@@ -123,3 +123,18 @@
 // } else {
 //   alert('C');
 // }
+const num = 0;
+switch (true) {
+  case num === 0:
+    console.log('num이 0과 같습니다.');
+    break;
+  case num < 0:
+    console.log('num이 0보다 작습니다.');
+    break;
+  default:
+    console.log('조건식이 모두 거짓입니다.');
+}
+const i = 1;
+if (i) {
+  console.log(i);
+}
