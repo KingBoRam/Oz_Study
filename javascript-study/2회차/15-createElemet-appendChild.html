@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>createElement & appendChild</title>
+  </head>
+  <body>
+    <!-- 아들을 추가할 태그 -->
+    <div id="container"></div>
+    <script>
+      for (let a = 1; a <= 5; a += 1) {
+        // 윗태그를 선택
+        const div = document.getElementById('container');
+        const box = document.createElement('div');
+        box.style.color = 'blue';
+        box.style.width = '200px';
+        box.style.height = '200px';
+        box.textContent = '재밋당';
+
+        div.appendChild(box);
+      }
+    </script>
+  </body>
+</html>
