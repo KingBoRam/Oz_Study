@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      console.log(createParagraph('응애', 'red'));
+      createParagraph('졸리고', 'green');
+      createParagraph('배고파', 'blue');
+      function createParagraph(text, color) {
+        const p = document.createElement('p');
+        p.style.color = color;
+        p.textContent = text;
+        document.querySelector('#container').append(p);
+        return `방금 만든 태그의 컨텐츠 : ${text}, 색상 : ${color}`;
+      }
+    </script>
+  </body>
+</html>
