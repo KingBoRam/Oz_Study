@@ -87,13 +87,17 @@ for (let i = 0; i < posts.length; i++) {
 }
 
 // 2. 도배글을 지워주세요
-const domPosts = document.querySelectorAll('.post');
-
+let domPosts = document.querySelectorAll('.post');
+// let deletedPost = [];
 for (let i = 0; i < domPosts.length; i++) {
   if (domPosts[i].children[1].textContent === '심심하면 짖는 갱얼쥐') {
+    // deletedPost.push(domPosts[i].parentNode.removeChild(domPosts[i]));
     domPosts[i].remove();
   }
 }
+domPosts = document.querySelectorAll('.post');
+console.log(domPosts);
+
 // 3. 도배글을 삭제했다는 글을 추가해주세요
 const post = document.createElement('section');
 post.className = 'post';

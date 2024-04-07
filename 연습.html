@@ -4,19 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style></style>
   </head>
   <body>
-    <ul>
-      <li><input type="checkbox" /><span>dd</span></li>
-    </ul>
+    <header>
+      <ul>
+        <li class="li">00</li>
+        <li class="li">11</li>
+        <li class="li">22</li>
+        <li class="li">33</li>
+        <li class="li">44</li>
+        <li class="li">55</li>
+        <li class="li">66</li>
+        <li class="li">77</li>
+        <li class="li">88</li>
+      </ul>
+    </header>
     <script>
-      function add() {
-        // 여기에 코드를 작성하세요.
-        if (typeof num1 === 'number' && typeof num2 === 'number') {
-          return num1 + num2;
+      let list = document.getElementsByClassName('li');
+      for (let i = 0; i < list.length; i++) {
+        if (i % 2 === 0) {
+          list[i].remove();
         }
       }
-      add(1, 2);
     </script>
   </body>
 </html>
