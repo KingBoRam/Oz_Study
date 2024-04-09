@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <div class="container">
+      <form class="form">
+        <fieldset class="basic-info">
+          <legend>기본 정보</legend>
+          <div class="name">
+            <span>이름</span>
+            <input type="text" name="name" autocomplete="off" required />
+          </div>
+          <div class="user-Number">
+            <span>주민번호</span>
+            <input type="text" name="usernumber1" required />
+            -
+            <input type="password" name="usernumber2" required />
+          </div>
+        </fieldset>
+        <fieldset class="signup-info">
+          <legend>가입 정보</legend>
+          <div class="id">
+            <span>아이디</span>
+            <input type="text" name="id" required />
+          </div>
+          <div class="pwd1">
+            <span>비밀번호</span>
+            <input type="password" name="pwd1" required />
+          </div>
+          <div class="pwd2">
+            <span>비밀번호 확인</span>
+            <input type="password" name="pwd2" required />
+          </div>
+          <div class="email">
+            <span>이메일</span>
+            <input type="password" name="email" autocomplete="off" required />
+            @
+            <select name="emailoption">
+              <option>gmail.com</option>
+              <option>naver.com</option>
+              <option>githip.com</option>
+            </select>
+          </div>
+        </fieldset>
+        <fieldset class="other-info">
+          <legend>기타 정보</legend>
+          <div class="address">
+            <span>주소</span>
+            <input type="text" name="address" autocomplete="off" required />
+          </div>
+          <div class="gender">
+            <span>성별</span>
+            <input type="radio" name="gender" id="male" value="male" required />
+            <label for="male" na> 남성 </label>
+            <input
+              type="radio"
+              name="gender"
+              id="female"
+              value="female"
+              required
+            />
+            <label for="female"> 여성 </label>
+          </div>
+        </fieldset>
+        <div class="agree">
+          <input type="checkbox" name="agree" required />
+          <span>개인정보 동의</span>
+        </div>
+        <input
+          type="submit"
+          value="회원가입"
+          name="submit"
+          class="submit"
+          required
+        />
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 16px;
+}
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.container {
+  width: 30rem;
+  border: 1px solid rgb(212, 212, 212);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+input {
+  height: 1.7rem;
+}
+fieldset input {
+  margin: 5px;
+}
+fieldset div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+fieldset div input {
+  width: 100%;
+}
+fieldset div span {
+  min-width: 7rem;
+}
+label {
+  width: 2rem;
+}
+#male,
+#female {
+  width: 1rem;
+}
+.agree {
+  display: flex;
+  align-items: center;
+}
+.agree span {
+  margin-left: 1rem;
+}
+.submit {
+  height: 3rem;
+  color: white;
+  background-color: rgb(75, 159, 255);
+  border: none;
+  border-radius: 5px;
+}
