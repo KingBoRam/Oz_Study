@@ -3,11 +3,11 @@ const btn = document.getElementById('add-btn');
 const ul = document.getElementById('todo-list');
 ul.style.paddingLeft = '0';
 ul.style.listStyleType = 'none';
-const TODOS_Ls = 'toDos';
+const TodoKey = 'toDos';
 let toDos = [];
 
 function saveToDos() {
-  localStorage.setItem(TODOS_Ls, JSON.stringify(toDos));
+  localStorage.setItem(TodoKey, JSON.stringify(toDos));
 }
 
 btn.addEventListener('click', () => {
@@ -23,6 +23,25 @@ btn.addEventListener('click', () => {
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
+    checkbox.className = 'checkbox';
+    let checked = checkbox.checked;
+    checkbox.addEventListener('change', function () {
+      let checkArr = [];
+      if (checkbox.checked || !checkbox.checked) {
+        const liId = parseInt(this.parentElement.id);
+        for (let i = 0; i < toDos.length; i++) {
+          if (liId === toDos[i].id) {
+            let test = toDos[i];
+            test.checked = !test.checked;
+            checkArr.push(test);
+          } else {
+            checkArr.push(toDos[i]);
+          }
+        }
+        toDos = checkArr;
+        saveToDos();
+      }
+    });
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'x';
@@ -42,6 +61,7 @@ btn.addEventListener('click', () => {
     const toDoObj = {
       text: input.value,
       id: newId,
+      checked,
     };
     toDos.push(toDoObj); // toDos에 toDoList 삽입
     saveToDos(); // localStorage에 저장하는 함수
@@ -49,9 +69,11 @@ btn.addEventListener('click', () => {
   }
 });
 
-const loadedToDos = localStorage.getItem(TODOS_Ls);
+//화면로딩될 때 로컬스토리지에서 값 받아와서 화면에 그리기
+const loadedToDos = localStorage.getItem(TodoKey);
 if (loadedToDos !== null) {
   let parsedToDos = JSON.parse(loadedToDos);
+  console.log(parsedToDos);
   toDos = parsedToDos;
   for (let i = 0; i < toDos.length; i++) {
     const li = document.createElement('li');
@@ -61,6 +83,25 @@ if (loadedToDos !== null) {
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
+    checkbox.className = 'checkbox';
+    checkbox.checked = toDos[i].checked;
+    checkbox.addEventListener('change', function () {
+      let checkArr = [];
+      if (checkbox.checked || !checkbox.checked) {
+        const liId = parseInt(this.parentElement.id);
+        for (let i = 0; i < toDos.length; i++) {
+          if (liId === toDos[i].id) {
+            let test = toDos[i];
+            test.checked = !test.checked;
+            checkArr.push(test);
+          } else {
+            checkArr.push(toDos[i]);
+          }
+        }
+        toDos = checkArr;
+        saveToDos();
+      }
+    });
 
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'x';
@@ -79,6 +120,7 @@ if (loadedToDos !== null) {
   }
 }
 
+// 드래그이벤트
 let picked = null;
 let pickedIndex = null;
 ul.addEventListener('dragstart', (e) => {
