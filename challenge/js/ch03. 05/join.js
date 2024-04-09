@@ -35,7 +35,7 @@ form.addEventListener('submit', function (e) {
   document.write(`<p>아이디 : ${userId}</p>`);
   document.write(`<p>이름 : ${userName}</p>`);
   document.write(`<p>전화번호 : ${userPhone}</p>`);
-  document.write(`<p>원하는 직무 : ${position}</p>`);
+  document.write(`<p>원하는 직무 : ${userPosition}</p>`);
 });
 
 // 회원 가입을 완료하면 나타나는 환연인사를 다같이 만들어 보자
