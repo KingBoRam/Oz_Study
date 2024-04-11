@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체를 만드는 생성자</title>
+  </head>
+  <body>
+    <script>
+      // 함수인데 객체를 생성할 목적으로 정의하는 함수. 설계도 개념.
+      // js에서 기본적으로 제공하지 않는 데이터 유형을 직접 만들 수 있다.
+      // 아래와 같이 BestSinger라는 데이터타입을 새로 만들고 값으로 그 아래의 것들을 넣어줌.
+      // 기능적 코드 조각을 모아둔 목적의 함수와 사용법이 같지만 목적 자체가 다른거임.
+      // function BestSinger() {
+      //   this.name = 'VOS';
+      //   this.member = '박지헌, 최현준, 김경록';
+      //   this.singing = function () {
+      //     console.log('니 이름 불렀나봐 나 술에 취해서');
+      //   };
+      // }
+      // const vos = new BestSinger();
+      // console.log(vos.name);
+
+      function Singer(name, member) {
+        (this.name = name), (this.member = member);
+      }
+      const noel = new Singer('노을', '강균성, 전우성, 이상곤, 나성호');
+      const vos = new Singer('vos', '박지헌, 최현준, 김경록');
+      console.log(vos.name);
+    </script>
+  </body>
+</html>

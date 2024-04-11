@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>타이머 메소드</title>
+  </head>
+  <body>
+    <p id="now"></p>
+    <button id="stop">멈췃!</button>
+    <script>
+      // //window 생략가능, 3000 = 3초
+      // window.setTimeout(function () {
+      //   alert('타입 아웃!');
+      // }, 3000);
+
+      let timetId;
+      timetId = setInterval(function () {
+        const p = document.getElementById('now');
+        const now = new Date();
+        // const then = new Date(1992, 11, 12, 12, 30, 45);
+        let year = now.getFullYear();
+        let month = now.getMonth() + 1;
+        let date = now.getDate();
+        let hour = now.getHours();
+        let min = now.getMinutes();
+        let sec = now.getSeconds();
+
+        p.textContent = `${year}/${month}/${date}/${hour}/${min}/${sec}`;
+      }, 1000);
+
+      const btn = document.getElementById('stop');
+      btn.addEventListener('click', function () {
+        clearInterval(timetId);
+      });
+    </script>
+  </body>
+</html>

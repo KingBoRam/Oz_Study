@@ -1,5 +1,10 @@
-const test = () => {
-  return 3;
+const person = {
+  name: {
+    firstName: '길동',
+    lastName: '홍',
+  },
+  printInfo: function () {
+    console.log('hello');
+  },
 };
-
-console.log(test());
+person['printInfo'];
