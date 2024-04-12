@@ -15,10 +15,12 @@
 TODO:햄버거 아이템 리스트 배열을 생성해줍니다. 
 */
 const items = [];
+let sum = 0;
+//todo가 왜있는지..?몰라서 가격으로 표시
 const todo = document.querySelector('.todo');
 const todoMenu = document.createElement('li');
 todoMenu.classList.add('todoMenu');
-todoMenu.textContent = `현재 주문한 햄버거 갯수 : ${items.length}개`;
+todoMenu.textContent = `현재 주문한 햄버거 가격: ${sum}원`;
 todo.append(todoMenu);
 
 // 아이템 추가 버튼 클릭 시 호출되는 함수
@@ -31,7 +33,8 @@ function addItem() {
   const item = `마싯는 햄버거 ${count}`;
   items.push(item);
   renderItems();
-  todoMenu.textContent = `현재 주문한 햄버거 갯수 : ${count}개`;
+  sum += 500;
+  todoMenu.textContent = `현재 주문한 햄버거 가격: ${sum}원`;
 }
 
 // 아이템 제거 버튼 클릭 시 호출되는 함수
@@ -41,8 +44,8 @@ TODO: 제거 버튼을 클릭하면 배열 리스트의 값 중 마지막 값 1�
 */
   items.pop();
   renderItems();
-  let count = items.length + 1;
-  todoMenu.textContent = `현재 주문한 햄버거 갯수 : ${count - 1}개`;
+  sum -= 500;
+  todoMenu.textContent = `현재 주문한 햄버거 가격: ${sum}원`;
 }
 
 // 아이템 리스트 렌더링 함수
@@ -82,10 +85,8 @@ document.getElementById('removeButton').addEventListener('click', removeItem);
 // nav와 a 활용
 const a = document.querySelectorAll('a');
 const currntPageURL = window.location.href;
-console.log(currntPageURL);
 for (let i = 0; i < a.length; i++) {
   let href = a[i].href;
-  console.log(href);
   if (href === currntPageURL) {
     a[i].setAttribute('aria-current', 'page');
   }
