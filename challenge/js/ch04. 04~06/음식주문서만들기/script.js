@@ -78,3 +78,15 @@ TODO: style.css 파일의 .show class를 이용하여 토글 기능을 만들어
 // 아이템 추가 및 제거 버튼 이벤트 핸들러
 document.getElementById('addButton').addEventListener('click', addItem);
 document.getElementById('removeButton').addEventListener('click', removeItem);
+
+// nav와 a 활용
+const a = document.querySelectorAll('a');
+const currntPageURL = window.location.href;
+console.log(currntPageURL);
+for (let i = 0; i < a.length; i++) {
+  let href = a[i].href;
+  console.log(href);
+  if (href === currntPageURL) {
+    a[i].setAttribute('aria-current', 'page');
+  }
+}
