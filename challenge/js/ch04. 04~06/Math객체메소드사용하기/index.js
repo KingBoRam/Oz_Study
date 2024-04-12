@@ -11,6 +11,7 @@ function absoluteDifference(a, b) {
   /*
     주어진 두 숫자(a,b)의 차이의 절댓값을 반환하는 함수 absoluteDifference를 정의하세요.
   */
+  return Math.abs(a - b);
 }
 
 // 2. floor
@@ -18,6 +19,7 @@ function custom_floor(x) {
   /*
     주어진 숫자(x)를 내림하여 반환하는 함수 custom_floor를 정의하세요.
   */
+  return Math.floor(x);
 }
 
 // 3. pow
@@ -26,6 +28,7 @@ function custom_pow(base, exponent) {
    주어진 밑(base)과 지수(exponent)에 따라 거듭제곱을 계산하여 반환하는 함수 
    custom_pow를 정의하세요.
   */
+  return Math.pow(base, exponent);
 }
 
 // 4. random
@@ -33,6 +36,7 @@ function custom_random() {
   /*
     0과 1 사이에서 랜덤한 숫자를 반환하는 함수 custom_random를 정의하세요.
   */
+  return Math.random();
 }
 
 // 5. sign
@@ -40,6 +44,7 @@ function custom_sign(x) {
   /*
     주어진 숫자(x)의 부호를 반환하는 함수 custom_sign를 정의하세요.
   */
+  return Math.sign(x);
 }
 
 // 6. sqrt
@@ -47,6 +52,7 @@ function custom_sqrt(x) {
   /*
    주어진 숫자(x)의  제곱근을 반환하는 함수 custom_sqrt를 정의하세요.
   */
+  return Math.sqrt(x);
 }
 
 /*
