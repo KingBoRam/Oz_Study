@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열</title>
+  </head>
+  <body>
+    <script>
+      const vos = ['박지헌', '최현준', '김경록'];
+      // vos[0] = '지헌';
+      // vos[1] = '현준';
+      // vos[2] = '경록';
+
+      // for (let i = 0; i < 3; i++) {
+      //   console.log(vos[i]);
+      // }
+      // vos.push('윤호');
+      // console.log(vos);
+
+      // vos.pop();
+      // console.log(vos);
+
+      // console.log(vos.indexOf('최현준'));
+      // console.log(vos.indexOf('dbsgh')); -1
+
+      // vos.splice(0, 0, '윤호');
+      // console.log(vos);
+
+      vos.forEach(function (item) {
+        console.log('포이칭' + item);
+      });
+    </script>
+  </body>
+</html>

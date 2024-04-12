@@ -1,10 +1,8 @@
-const person = {
-  name: {
-    firstName: '길동',
-    lastName: '홍',
-  },
-  printInfo: function () {
-    console.log('hello');
-  },
-};
-person['printInfo'];
+function dog() {
+  name = '콩이';
+  breed = '시츄';
+  return { name, breed };
+}
+const myDog = dog();
+const myDog2 = myDog;
+console.log(myDog2 === myDog);

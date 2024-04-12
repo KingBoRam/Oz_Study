@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클래스 리스트</title>
+    <style>
+      .pretty {
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img src="1234.png" alt="지구" width="800" />
+    <br />
+    <!-- 클래스 속성을 추가 제거 토글하는 버튼 -->
+    <button id="add">Add style</button>
+    <button id="remove">Remove style</button>
+    <button id="toggle">Toggle style</button>
+    <script>
+      const img = document.querySelector('img');
+      const addBtn = document.querySelector('#add');
+      const removeBtn = document.querySelector('#remove');
+      const toggleBtn = document.querySelector('#toggle');
+
+      addBtn.addEventListener('click', function () {
+        img.classList.add('pretty');
+        console.log(img.classList.contains('pretty'));
+      });
+      removeBtn.addEventListener('click', function () {
+        img.classList.remove('pretty');
+        console.log(img.classList.contains('pretty'));
+      });
+      toggleBtn.addEventListener('click', function () {
+        img.classList.toggle('pretty');
+        console.log(img.classList.contains('pretty'));
+      });
+    </script>
+  </body>
+</html>
