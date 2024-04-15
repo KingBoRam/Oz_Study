@@ -132,6 +132,7 @@ ul.addEventListener('dragover', (e) => {
   e.preventDefault();
 });
 ul.addEventListener('drop', (e) => {
+  e.preventDefault();
   const obj = e.target;
   const index = [...obj.parentNode.children].indexOf(obj);
   if (index > pickedIndex) {
