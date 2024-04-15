@@ -45,7 +45,7 @@ drawButton.addEventListener('click', function () {
 // 로또 번호 삭제
 resetButton.addEventListener('click', function () {
   lottoNumbers.splice(0, 6);
-  // lottoNumbers = []; 이건 lottoNumbers가 let일때만되고 위에는 const일때도 됨
+  // lottoNumbers = []; 이건 lottoNumbers가 let일때만되고 위에는 const일때도 됨. 즉 같은배열을 할당하는게 아니라 새로운 주소를 입력해준거징
   numbersDiv.innerHTML = '';
 });
 
