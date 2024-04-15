@@ -45,7 +45,7 @@ drawButton.addEventListener('click', function () {
 // 로또 번호 삭제
 resetButton.addEventListener('click', function () {
   lottoNumbers.splice(0, 6);
-  // lottoNumbers = [];
+  // lottoNumbers = []; 이건 lottoNumbers가 let일때만되고 위에는 const일때도 됨
   numbersDiv.innerHTML = '';
 });
 
@@ -59,4 +59,4 @@ let month = today.getMonth() + 1;
 let day = today.getDate();
 todaySpan.textContent = `${year}년 ${month}월 ${day}일 `;
 
-// 과제 추첨을 한번 더 눌렀을 때 새로운 번호 나오기.
+// 과제 추첨을 한번 더 눌렀을 때 새로운 번호 나오기. -완-
