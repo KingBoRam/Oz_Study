@@ -3,9 +3,10 @@ const btn = document.getElementById('add-btn');
 const ul = document.getElementById('todo-list');
 ul.style.paddingLeft = '0';
 ul.style.listStyleType = 'none';
+
 const TodoKey = 'toDos';
 let toDos = [];
-
+// ...toDos에 리스트의 정보를 객체로 저장하는 코드
 function saveToDos() {
   localStorage.setItem(TodoKey, JSON.stringify(toDos));
 }
@@ -73,7 +74,7 @@ btn.addEventListener('click', () => {
 const loadedToDos = localStorage.getItem(TodoKey);
 if (loadedToDos !== null) {
   let parsedToDos = JSON.parse(loadedToDos);
-  console.log(parsedToDos);
+
   toDos = parsedToDos;
   for (let i = 0; i < toDos.length; i++) {
     const li = document.createElement('li');
@@ -88,6 +89,7 @@ if (loadedToDos !== null) {
     checkbox.addEventListener('change', function () {
       let checkArr = [];
       if (checkbox.checked || !checkbox.checked) {
+        console.log(this.parentElement.id);
         const liId = parseInt(this.parentElement.id);
         for (let i = 0; i < toDos.length; i++) {
           if (liId === toDos[i].id) {
