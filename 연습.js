@@ -1,12 +1,12 @@
-const addbtn = document.getElementById('add');
-const delbtn = document.getElementById('del');
-const rebtn = document.getElementById('re');
+class 사람 {
+  constructor(이름, 나이) {
+    this.이름 = 이름;
+    this.나이 = 나이;
+  }
+  말하기() {
+    console.log(`${this.name} : 안녕하세요~`);
+  }
+}
 
-const arr = [
-  { text: '1', id: 123 },
-  { text: '2', id: 456 },
-];
-addbtn.addEventListener('click', function () {
-  const newId = new Date().getTime();
-  localStorage.setItem(123, JSON.stringify(arr));
-});
+const 보람 = new 사람('보람', '비밀');
+console.log(보람);
