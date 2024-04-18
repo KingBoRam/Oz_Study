@@ -3,7 +3,6 @@ const apiRandomDogs = 'https://dog.ceo/api/breeds/image/random/42';
 const apiAllBreeds = 'https://dog.ceo/api/breeds/list/all';
 const request1 = new XMLHttpRequest();
 const request2 = new XMLHttpRequest();
-const request3 = new XMLHttpRequest();
 
 // 왜 어떤건 class고 어떤건 id고 둘다있는것도있고 그렇지? 라고 생각했는데 의도적으로 js에서 불러와야 하는 값은 id를 주셨다고 한다. (그게 맞는거같다 내가 조작할것을 고유한 id값을 주는게 더 편리할듯)
 const header = document.getElementById('header');
@@ -16,7 +15,7 @@ const tothetop = document.getElementById('tothetop');
 const resetBtn = document.getElementById('reset');
 
 // 강아지를 담아둘 배열
-let curruntDogs = [];
+let currentDogs = [];
 
 // 겹치는 함수
 function displayDogs(item) {
@@ -31,14 +30,14 @@ window.addEventListener('load', function () {
   //강아지 사진 뿌리기
   request1.open('get', apiRandomDogs);
   // 위의 로드와는 다른 로드임을 기억할 것
-  const event = function () {
+  request1.addEventListener('load', function () {
+    main.innerHTML = '';
     const response = JSON.parse(request1.response);
     response.message.forEach(function (item) {
-      curruntDogs.push(item);
+      currentDogs.push(item);
       displayDogs(item);
     });
-  };
-  request1.addEventListener('load', event);
+  });
   request1.send();
 
   // 셀렉트에 견종 정보 뿌리기
@@ -54,23 +53,11 @@ window.addEventListener('load', function () {
     });
   });
   request2.send();
-
-  //셀렉트 옆에 버튼 추가 리셋 42마리 새롭게 요청 기존강아지 없어지고 새로운강아지.
-  resetBtn.addEventListener('click', function () {
-    main.innerHTML = '';
-    curruntDogs = [];
-    select.value = '';
-    request1.open('get', apiRandomDogs);
-    // 위의 로드와는 다른 로드임을 기억할 것
-    request1.removeEventListener('load', event);
-    request1.addEventListener('load', event);
-    request1.send();
-  });
 });
 
 button.addEventListener('click', function () {
   main.innerHTML = '';
-  let filteredDogs = curruntDogs.filter(function (item) {
+  let filteredDogs = currentDogs.filter(function (item) {
     // input에 값이 없으면 0을 반환하고 모든항목이 반환됨.
     return item.indexOf(input.value) !== -1;
   });
@@ -84,7 +71,7 @@ button.addEventListener('click', function () {
 
 select.addEventListener('change', function () {
   main.innerHTML = '';
-  let filteredDogs = curruntDogs.filter(function (item) {
+  let filteredDogs = currentDogs.filter(function (item) {
     // 태그 처음에 기입할때 all에 밸류를 비워둠. 빈밸류는 위와마찬가지로 0이니까 전부다 반환됨.
     return item.indexOf(select.value) !== -1;
   });
@@ -98,12 +85,10 @@ select.addEventListener('change', function () {
 
 more.addEventListener('click', function () {
   request1.open('get', apiRandomDogs);
-  // 위의 로드와는 다른 로드임을 기억할 것
   request1.addEventListener('load', function () {
     const response = JSON.parse(request1.response);
     response.message.forEach(function (item) {
-      curruntDogs.push(item);
-      // 배열에 추가하고 그 배열을 화면에 그릴떄완 다르게 받아온값을 즉시 화면에 그리니까 초기화는 필요없음
+      currentDogs.push(item);
       displayDogs(item);
     });
   });
@@ -112,5 +97,22 @@ more.addEventListener('click', function () {
 
 tothetop.addEventListener('click', function () {
   // scrollTo : 주어진 위치로 스크롤을 이동시킴(y축값, 위치는 객체리터럴로) 특정위치로 이동시키는 연습 해보면 좋을 것 같다. + 부드럽게 움직이게 css추가
+  window.scrollTo({ top: 0 });
+});
+
+// 셀렉트 옆에 버튼 추가 리셋 42마리 새롭게 요청 기존강아지 없어지고 새로운강아지.
+resetBtn.addEventListener('click', function () {
+  currentDogs = [];
+  select.value = '';
+  main.innerHTML = '';
+  request1.open('get', apiRandomDogs);
+  request1.addEventListener('load', function () {
+    const response = JSON.parse(request1.response);
+    response.message.forEach(function (item) {
+      currentDogs.push(item);
+      displayDogs(item);
+    });
+  });
+  request1.send();
   window.scrollTo({ top: 0 });
 });
