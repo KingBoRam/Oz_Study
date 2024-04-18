@@ -102,11 +102,11 @@ tothetop.addEventListener('click', function () {
 
 // 셀렉트 옆에 버튼 추가 리셋 42마리 새롭게 요청 기존강아지 없어지고 새로운강아지.
 resetBtn.addEventListener('click', function () {
-  currentDogs = [];
-  select.value = '';
-  main.innerHTML = '';
   request1.open('get', apiRandomDogs);
   request1.addEventListener('load', function () {
+    currentDogs = [];
+    select.value = '';
+    main.innerHTML = '';
     const response = JSON.parse(request1.response);
     response.message.forEach(function (item) {
       currentDogs.push(item);
