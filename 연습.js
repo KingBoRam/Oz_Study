@@ -1,7 +1,8 @@
-const purpleCuteSlime = {
-  name: '슬라임',
-  attribute: 'cute',
-  color: 'purple',
-};
+function sayHello(name, callback) {
+  const words = '안녕하세요 저는 ' + name + '입니다.';
+  callback(words);
+}
 
-const { color, ...slimes } = purpleCuteSlime;
+sayHello('홍길동', function (name) {
+  console.log(name);
+});
