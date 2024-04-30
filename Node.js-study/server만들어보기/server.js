@@ -3,7 +3,7 @@ const port = 4000;
 const target = { a: 'a', b: 'b' };
 // 서버생성
 const server = http.createServer((req, res) => {
-  //요청이 왔을때 어떻게할지
+  //요청이 왔을때 어떻게할지 -> 요청은 콘솔에서 fetch를 써서 보냄.
   if (req.method === 'POST' && req.url === '/home') {
     req.on('data', (data) => {
       console.log(data);

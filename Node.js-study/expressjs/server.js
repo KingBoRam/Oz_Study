@@ -1,4 +1,5 @@
 const express = require('express');
+
 const postsRouter = require('./routes/posts.router');
 const usersRouter = require('./routes/users.router');
 const path = require('path');
