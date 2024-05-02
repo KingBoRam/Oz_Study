@@ -1,5 +1,5 @@
 // DOG api에 강아지를 한번에 원하는 만큼 가져올수 있게 하는 url이 따로 있음. + 모든 견종정보리스트도 받을수 있음
-const apiRandomDogs = 'https://dog.ceo/api/breeds/image/random/42';
+const apiRandomDogs = 'https://dog.ceo/api/breeds/image/random/3';
 const apiAllBreeds = 'https://dog.ceo/api/breeds/list/all';
 const request1 = new XMLHttpRequest();
 const request2 = new XMLHttpRequest();

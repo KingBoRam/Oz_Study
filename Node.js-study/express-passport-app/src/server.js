@@ -109,6 +109,16 @@ app.post('/login', (req, res, next) => {
   })(req, res, next);
 });
 
+app.get('/auth/google', passport.authenticate('google'));
+
+app.get(
+  '/auth/google/callback',
+  passport.authenticate('google', {
+    successReturnToOrRedirect: '/',
+    failureRedirect: '/login',
+  }),
+);
+
 app.listen(port, () => {
   console.log(port + '포트에서 서버 시작했다.');
 });
