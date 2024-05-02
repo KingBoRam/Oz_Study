@@ -4,13 +4,11 @@ const path = require('path');
 const User = require('./models/users.model');
 const passport = require('passport');
 const cookiSession = require('cookie-session');
-const key = require('./key.js');
 const {
   checkAuthenticated,
   checkNotAuthenticated,
 } = require('./middlewares/auth.js');
 
-const port = 4000;
 const app = express();
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
@@ -23,11 +21,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 require('./config/passport');
+require('dotenv').config();
 
-const cookieEncrytionKey = ['key1', 'key2'];
 app.use(
   cookiSession({
-    keys: cookieEncrytionKey,
+    keys: [process.env.COOKIE_ENCRYPTION_KEY],
   }),
 );
 app.use(passport.initialize());
@@ -51,7 +49,7 @@ app.use(function (request, response, next) {
 //mongo db
 mongoose.set('strictQuery', false);
 mongoose
-  .connect(key.key)
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log('몽고디비 연결됐다.');
   })
@@ -118,6 +116,10 @@ app.get(
     failureRedirect: '/login',
   }),
 );
+
+const config = require('config');
+const serverConfig = config.get('server');
+const port = serverConfig.port;
 
 app.listen(port, () => {
   console.log(port + '포트에서 서버 시작했다.');
