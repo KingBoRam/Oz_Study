@@ -31,17 +31,17 @@ const getEmailData = (to, name, template) => {
 };
 
 const sendEmail = (to, name, type) => {
-  const transporter = mailer.createTrnasporter({
+  const transporter = mailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'boramy9494@gmaill.com',
+      user: 'boramy9494@gmail.com',
       pass: process.env.EMAIL_PASSWORD,
     },
   });
   const mail = getEmailData(to, name, type);
-  transporter.sendEmail(mail, (error, res) => {
-    if (err) {
-      console.log(err);
+  transporter.sendMail(mail, (error, res) => {
+    if (error) {
+      console.log(error);
     } else {
       console.log('email 잘 보냈어요.');
     }
