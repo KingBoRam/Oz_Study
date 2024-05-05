@@ -2,6 +2,7 @@ const apiRandomDogs = 'https://dog.ceo/api/breeds/image/random/3';
 const apiAllBreeds = 'https://dog.ceo/api/breeds/list/all';
 const request1 = new XMLHttpRequest();
 const request2 = new XMLHttpRequest();
+
 const header = document.getElementById('header');
 const main = document.getElementById('main');
 const input = document.getElementById('filter-text');
@@ -9,7 +10,7 @@ const button = document.getElementById('filter-button');
 const select = document.getElementById('filter-select');
 const more = document.getElementById('more');
 const tothetop = document.getElementById('tothetop');
-
+const resetBtn = document.getElementById('reset');
 const currentDogs = [];
 
 function displayDogs(item) {
@@ -63,6 +64,7 @@ select.addEventListener('change', function () {
   let filteredDogs = currentDogs.filter(function (item) {
     return item.indexOf(select.value) !== -1;
   });
+
   filteredDogs.forEach(function (item) {
     displayDogs(item);
   });
@@ -82,5 +84,19 @@ more.addEventListener('click', function () {
 });
 
 tothetop.addEventListener('click', function () {
+  window.scrollTo({ top: 0 });
+});
+
+//셀렉트 옆에 버튼 추가 리셋 42마리 새롭게 요청 기존강아지 없어지고 새로운강아지.
+resetBtn.addEventListener('click', function () {
+  request1.open('get', apiRandomDogs);
+  request1.addEventListener('load', function () {
+    main.innerHTML = '';
+    const response = JSON.parse(request1.response);
+    response.message.forEach(function (item) {
+      displayDogs(item);
+    });
+  });
+  request1.send();
   window.scrollTo({ top: 0 });
 });
