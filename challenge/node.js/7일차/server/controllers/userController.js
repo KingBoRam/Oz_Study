@@ -1,5 +1,6 @@
 const User = require('../models/User');
 const cookieToken = require('../utils/cookieToken');
+const cloudinary = require('cloudinary').v2;
 
 exports.register = async (req, res) => {
   try {
@@ -49,6 +50,67 @@ exports.login = async (req, res) => {
       });
     }
     cookieToken(user, res);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: '서버 오류입니다.',
+      error: error,
+    });
+  }
+};
+
+exports.updateUserDetails = async (req, res) => {
+  try {
+    const { name, password, email, picture } = req.body;
+    const user = await User.findOne({ email });
+    console.log(user.password);
+    if (!user) {
+      return (
+        res.status(404),
+        json({
+          message: 'User not found',
+        })
+      );
+    }
+    // user can update only name, only password,only profile pic or all three
+    user.name = name;
+    if (picture && !password) {
+      user.picture = picture;
+    } else if (password && !picture) {
+      user.password = password;
+    } else if (picture && password) {
+      user.picture = picture;
+      user.password = password;
+    }
+    const updatedUser = await user.save();
+    console.log(updatedUser.password);
+    cookieToken(updatedUser, res);
+  } catch (error) {
+    res.status(500).json({ message: 'Internal server error', error });
+  }
+};
+
+exports.logout = async (req, res) => {
+  res
+    .cookie('token', null, {
+      expires: new Date(Date.now()),
+      httpOnly: true,
+      sameSite: 'none',
+    })
+    .json({
+      success: true,
+      message: '로그아웃 됐어요',
+    });
+};
+
+exports.uploadPicture = async (req, res) => {
+  const { path } = req.file;
+  console.log(path);
+  try {
+    let result = await cloudinary.uploader.upload(path, {
+      folder: 'Airbnb/User',
+    });
+    res.status(200).json(result.secure_url);
   } catch (error) {
     console.log(error);
     res.status(500).json({
