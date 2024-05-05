@@ -1,5 +1,5 @@
 // DOG api에 강아지를 한번에 원하는 만큼 가져올수 있게 하는 url이 따로 있음. + 모든 견종정보리스트도 받을수 있음
-const apiRandomDogs = 'https://dog.ceo/api/breeds/image/random/42';
+const apiRandomDogs = 'https://dog.ceo/api/breeds/image/random/3';
 const apiAllBreeds = 'https://dog.ceo/api/breeds/list/all';
 const request1 = new XMLHttpRequest();
 const request2 = new XMLHttpRequest();
@@ -26,18 +26,18 @@ function displayDogs(item) {
 }
 
 // 웹페이지가 로드됐을 때 이벤트 추가
-window.addEventListener('load', function () {
+window.onload = function () {
   //강아지 사진 뿌리기
   request1.open('get', apiRandomDogs);
   // 위의 로드와는 다른 로드임을 기억할 것
-  request1.addEventListener('load', function () {
+  request1.onload = function () {
     // main.innerHTML = '';
     const response = JSON.parse(request1.response);
     response.message.forEach(function (item) {
       currentDogs.push(item);
       displayDogs(item);
     });
-  });
+  };
   request1.send();
 
   // 셀렉트에 견종 정보 뿌리기
@@ -53,7 +53,7 @@ window.addEventListener('load', function () {
     });
   });
   request2.send();
-});
+};
 
 button.addEventListener('click', function () {
   main.innerHTML = '';
@@ -85,13 +85,14 @@ select.addEventListener('change', function () {
 
 more.addEventListener('click', function () {
   request1.open('get', apiRandomDogs);
-  request1.addEventListener('load', function () {
+  request1.onload = function () {
+    // main.innerHTML = '';
     const response = JSON.parse(request1.response);
     response.message.forEach(function (item) {
       currentDogs.push(item);
       displayDogs(item);
     });
-  });
+  };
   request1.send();
 });
 
@@ -102,17 +103,15 @@ tothetop.addEventListener('click', function () {
 
 // 셀렉트 옆에 버튼 추가 리셋 42마리 새롭게 요청 기존강아지 없어지고 새로운강아지.
 resetBtn.addEventListener('click', function () {
+  main.innerHTML = '';
   request1.open('get', apiRandomDogs);
-  request1.addEventListener('load', function () {
-    currentDogs = [];
-    select.value = '';
-    main.innerHTML = '';
+  request1.onload = function () {
     const response = JSON.parse(request1.response);
     response.message.forEach(function (item) {
       currentDogs.push(item);
       displayDogs(item);
     });
-  });
+  };
   request1.send();
   window.scrollTo({ top: 0 });
 });
