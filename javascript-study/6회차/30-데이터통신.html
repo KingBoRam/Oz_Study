@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,17 +10,23 @@
     <hr />
     <img src="" alt="강아지사진" />
     <script>
+      // const rqs = new XMLHttpRequest();
+      // const btn = document.getElementById('push');
+      // btn.addEventListener('click', function () {
+      //   rqs.open('get', 'https://dog.ceo/api/breeds/image/random');
+      //   rqs.addEventListener('load', function () {
+      //     const result = JSON.parse(rqs.response);
+      //     const img = document.querySelector('img');
+      //     img.src = result.message;
+      //   });
+      //   rqs.send();
+      // });
       const rqs = new XMLHttpRequest();
-      const btn = document.getElementById('push');
-      btn.addEventListener('click', function () {
-        rqs.open('get', 'https://dog.ceo/api/breeds/image/random');
-        rqs.addEventListener('load', function () {
-          const result = JSON.parse(rqs.response);
-          const img = document.querySelector('img');
-          img.src = result.message;
-        });
-        rqs.send();
+      rqs.open('get', 'https://dog.ceo/api/breeds/image/random');
+      rqs.addEventListener('load', function () {
+        alert('!');
       });
+      rqs.send();
     </script>
   </body>
 </html>

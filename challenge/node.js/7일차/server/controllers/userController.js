@@ -63,7 +63,6 @@ exports.updateUserDetails = async (req, res) => {
   try {
     const { name, password, email, picture } = req.body;
     const user = await User.findOne({ email });
-    console.log(user.password);
     if (!user) {
       return (
         res.status(404),
@@ -83,7 +82,6 @@ exports.updateUserDetails = async (req, res) => {
       user.password = password;
     }
     const updatedUser = await user.save();
-    console.log(updatedUser.password);
     cookieToken(updatedUser, res);
   } catch (error) {
     res.status(500).json({ message: 'Internal server error', error });
