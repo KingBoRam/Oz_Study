@@ -62,6 +62,7 @@ exports.login = async (req, res) => {
 exports.updateUserDetails = async (req, res) => {
   try {
     const { name, password, email, picture } = req.body;
+    const pwd = password;
     const user = await User.findOne({ email });
     if (!user) {
       return (
