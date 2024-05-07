@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          김보람 화이팅!
+          김보람 화이팅! 과제용으로 한번더 커밋!
         </a>
       </header>
     </div>
