@@ -79,11 +79,36 @@
 //   const res = await jsonRes.json();
 //   console.log(res);
 // }
-axios
-  .get('https://dog.ceo/api/breeds/image/random')
-  .then((res) => {
-    console.log(res.data);
-  })
-  .catch((err) => {
-    console.log('err 발생 : ' + err);
-  });
+// axios
+//   .get('https://dog.ceo/api/breeds/image/random')
+//   .then((res) => {
+//     console.log(res.data);
+//   })
+//   .catch((err) => {
+//     console.log('err 발생 : ' + err);
+//   });
+
+function testExplicit(num) {
+  return String(num);
+}
+function testExplicit2(num) {
+  return num.toString();
+}
+function testInplicit(num) {
+  return num + '';
+}
+function repeat(num) {
+  let i = 0;
+  while (i < 1000) {
+    testExplicit(num);
+    i++;
+  }
+}
+
+// console.time('반복');
+// repeat(123);
+// console.timeEnd('반복');
+
+// console.log(+['10', 20][0]);
+
+console.log(typeof testExplicit2(123));
