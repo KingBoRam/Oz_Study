@@ -88,27 +88,36 @@
 //     console.log('err 발생 : ' + err);
 //   });
 
-function testExplicit(num) {
-  return String(num);
-}
-function testExplicit2(num) {
-  return num.toString();
-}
-function testInplicit(num) {
-  return num + '';
-}
-function repeat(num) {
-  let i = 0;
-  while (i < 1000) {
-    testExplicit(num);
-    i++;
-  }
-}
+// function testExplicit(num) {
+//   return String(num);
+// }
+// function testExplicit2(num) {
+//   return num.toString();
+// }
+// function testInplicit(num) {
+//   return num + '';
+// }
+// function repeat(num) {
+//   let i = 0;
+//   while (i < 1000) {
+//     testExplicit(num);
+//     i++;
+//   }
+// }
 
-// console.time('반복');
-// repeat(123);
-// console.timeEnd('반복');
+// // console.time('반복');
+// // repeat(123);
+// // console.timeEnd('반복');
 
-// console.log(+['10', 20][0]);
+// // console.log(+['10', 20][0]);
 
-console.log(typeof testExplicit2(123));
+// console.log(typeof testExplicit2(123));
+
+// const text = {
+//   a: '1',
+// };
+
+// console.log(text.b);
+const symbol1 = Symbol('hello');
+const symbol2 = Symbol('hello');
+console.log(symbol1 == symbol2);
