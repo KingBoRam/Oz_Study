@@ -88,36 +88,46 @@
 //     console.log('err 발생 : ' + err);
 //   });
 
-// function testExplicit(num) {
-//   return String(num);
-// }
-// function testExplicit2(num) {
-//   return num.toString();
-// }
-// function testInplicit(num) {
-//   return num + '';
-// }
-// function repeat(num) {
+// function repeat(fn, num) {
 //   let i = 0;
-//   while (i < 1000) {
-//     testExplicit(num);
-//     i++;
+//   if (fn === 'ex') {
+//     while (i < 10000) {
+//       String(num);
+//       i++;
+//     }
+//   } else if (fn === 'in') {
+//     while (i < 10000) {
+//       num + '';
+//       i++;
+//     }
 //   }
 // }
 
-// // console.time('반복');
-// // repeat(123);
-// // console.timeEnd('반복');
+// console.time('반복');
+// repeat('in', 1000);
+// console.timeEnd('반복');
+function repeat(fn, num) {
+  let i = 0;
+  console.time('반복' + fn);
+  if (fn === 'ex') {
+    while (i < 10000) {
+      String(num);
+      i++;
+    }
+  } else if (fn === 'ex2') {
+    while (i < 10000) {
+      num.toString();
+      i++;
+    }
+  } else if (fn === 'in') {
+    while (i < 10000) {
+      num + '';
+      i++;
+    }
+  }
+  console.timeEnd('반복' + fn);
+}
 
-// // console.log(+['10', 20][0]);
-
-// console.log(typeof testExplicit2(123));
-
-// const text = {
-//   a: '1',
-// };
-
-// console.log(text.b);
-const symbol1 = Symbol('hello');
-const symbol2 = Symbol('hello');
-console.log(symbol1 == symbol2);
+repeat('ex', 1000);
+repeat('ex2', 1000);
+repeat('in', 1000);
