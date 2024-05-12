@@ -3,14 +3,30 @@ import ShoppingItem from './ShoppingItem';
 import './ShoppingList.css';
 import { VscClearAll } from 'react-icons/vsc';
 
-function ShoppingList() {
+function ShoppingList({
+  products,
+  setProducts,
+  handleDelete,
+  handleClear,
+  handleEdit,
+}) {
   return (
     <>
       <ul className="list-contents">
-        <ShoppingItem></ShoppingItem>
+        {products.map((item) => {
+          return (
+            <ShoppingItem
+              key={item.id}
+              products={item}
+              setProducts={setProducts}
+              handleDelete={handleDelete}
+              handleEdit={handleEdit}
+            ></ShoppingItem>
+          );
+        })}
       </ul>
-      <button className="btn">
-        목록지우기
+      <button className="btn" onClick={handleClear}>
+        목록비우기
         <VscClearAll className="btn-icon" />
       </button>
     </>

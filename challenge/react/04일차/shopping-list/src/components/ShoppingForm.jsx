@@ -2,10 +2,17 @@ import React from 'react';
 import './ShoppingForm.css';
 import { TbSend2 } from 'react-icons/tb';
 
-function ShoppingForm() {
+function ShoppingForm({
+  handleSubmit,
+  product,
+  setProduct,
+  price,
+  setPrice,
+  edit,
+}) {
   return (
     <>
-      <form className="form-container">
+      <form className="form-container" onSubmit={handleSubmit}>
         <div className="form-contents">
           <div className="form-content">
             <label htmlFor="product">상품</label>
@@ -14,7 +21,10 @@ function ShoppingForm() {
               name="product"
               id="product"
               placeholder="예) 콜라"
-              // value={product}
+              value={product}
+              onChange={(e) => {
+                setProduct(e.target.value);
+              }}
             ></input>
           </div>
           <div className="form-content">
@@ -24,12 +34,15 @@ function ShoppingForm() {
               name="price"
               id="price"
               placeholder="예) 100"
-              // value={price}
+              value={price}
+              onChange={(e) => {
+                setPrice(e.target.value);
+              }}
             ></input>
           </div>
         </div>
         <button type="submit" className="btn">
-          추가
+          {edit ? '수정' : '제출'}
           <TbSend2 className="btn-icon " />
         </button>
       </form>
