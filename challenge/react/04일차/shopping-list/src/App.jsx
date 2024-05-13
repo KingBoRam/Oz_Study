@@ -101,7 +101,7 @@ function App() {
           </div>
           <div className="total-price">
             <p>
-              <spam style={{ color: 'black' }}>총 합 </spam>:{' '}
+              <span style={{ color: 'black' }}>총 합 </span>:{' '}
               {products.reduce((acc, cur) => {
                 return (acc += Number(cur.price));
               }, 0)}
