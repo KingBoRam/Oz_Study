@@ -106,28 +106,35 @@
 // console.time('반복');
 // repeat('in', 1000);
 // console.timeEnd('반복');
-function repeat(fn, num) {
-  let i = 0;
-  console.time('반복' + fn);
-  if (fn === 'ex') {
-    while (i < 10000) {
-      String(num);
-      i++;
-    }
-  } else if (fn === 'ex2') {
-    while (i < 10000) {
-      num.toString();
-      i++;
-    }
-  } else if (fn === 'in') {
-    while (i < 10000) {
-      num + '';
-      i++;
-    }
-  }
-  console.timeEnd('반복' + fn);
-}
+// function repeat(fn, num) {
+//   let i = 0;
+//   console.time('반복' + fn);
+//   if (fn === 'ex') {
+//     while (i < 10000) {
+//       String(num);
+//       i++;
+//     }
+//   } else if (fn === 'ex2') {
+//     while (i < 10000) {
+//       num.toString();
+//       i++;
+//     }
+//   } else if (fn === 'in') {
+//     while (i < 10000) {
+//       num + '';
+//       i++;
+//     }
+//   }
+//   console.timeEnd('반복' + fn);
+// }
 
-repeat('ex', 1000);
-repeat('ex2', 1000);
-repeat('in', 1000);
+// repeat('ex', 1000);
+// repeat('ex2', 1000);
+// repeat('in', 1000);
+
+function count(n) {
+  if (n < 0) return;
+  console.log(n);
+  count(n - 1);
+}
+count(10);

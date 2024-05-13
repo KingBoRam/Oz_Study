@@ -10,13 +10,11 @@ const initialTodoData = localStorage.getItem('todoData')
 function App() {
   console.log('App 렌더링');
   const [todoData, setTodoData] = useState(initialTodoData);
-
   const [value, setValue] = useState('');
 
   const handleSubmit = (e) => {
     // form 안에 input을 전송할 때 페이지 리로드 되는 걸 막아줌
     e.preventDefault();
-
     // 새로운 할 일 데이터
     let newTodo = {
       id: Date.now(),
@@ -27,7 +25,6 @@ function App() {
     // 원래 있던 할 일에 새로운 할 일 더해주기
     setTodoData((prev) => [...prev, newTodo]);
     localStorage.setItem('todoData', JSON.stringify([...todoData, newTodo]));
-
     // 입력란에 있던 글씨 지워주기
     setValue('');
   };
