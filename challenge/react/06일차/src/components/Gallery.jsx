@@ -7,6 +7,8 @@ const Gallery = ({ photos }) => {
       style={{
         display: 'flex',
         justifyContent: 'center',
+        overflow: 'scroll',
+        overflowX: 'hidden',
       }}
     >
       <Container>

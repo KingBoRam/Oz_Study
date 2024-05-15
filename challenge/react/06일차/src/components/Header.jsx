@@ -21,7 +21,7 @@ const Header = ({ handleSearch }) => {
           }}
         >
           <FaCameraRetro style={{ color: '#e03131' }} />
-          <p>The Picture</p>
+          <p>The Photos</p>
         </HeaderLogo>
         <HeaderInput>
           <input
@@ -30,6 +30,11 @@ const Header = ({ handleSearch }) => {
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                handleSearch(searchText);
+              }
             }}
           />
           <HeaderBtn
@@ -93,7 +98,5 @@ const HeaderBtn = styled.button`
   border: none;
   background-color: white;
   font-size: 1.5rem;
-  :hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 `;
