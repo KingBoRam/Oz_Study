@@ -10,7 +10,6 @@ const Gallery = ({ photos }) => {
       }}
     >
       <Container>
-        <H1>Unsplash 연동 이미지 검색 페이지입니다.</H1>
         {photos.length > 0 ? (
           <ImgContainer>
             {photos.map((item) => {
@@ -24,7 +23,10 @@ const Gallery = ({ photos }) => {
             })}
           </ImgContainer>
         ) : (
-          <FirstImg src="/images/film.png"></FirstImg>
+          <>
+            <H1>Unsplash 연동 이미지 검색 페이지입니다.</H1>
+            <FirstImg src="/images/film.png"></FirstImg>
+          </>
         )}
       </Container>
     </div>
