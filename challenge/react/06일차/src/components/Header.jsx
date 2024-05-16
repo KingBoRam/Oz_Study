@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { FaCameraRetro } from 'react-icons/fa';
 import { IoSearch } from 'react-icons/io5';
+import { IoCamera } from 'react-icons/io5';
 
 const Header = ({ handleSearch }) => {
   const [searchText, setSearchText] = useState('');
@@ -20,7 +20,7 @@ const Header = ({ handleSearch }) => {
             window.location.href = '/';
           }}
         >
-          <FaCameraRetro style={{ color: '#e03131' }} />
+          <IoCamera style={{ color: '#e03131' }} />
           <p>The Photos</p>
         </HeaderLogo>
         <HeaderInput>
@@ -66,7 +66,6 @@ const HeaderWrapper = styled.div`
 
 const HeaderLogo = styled.a`
   font-size: 4rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
