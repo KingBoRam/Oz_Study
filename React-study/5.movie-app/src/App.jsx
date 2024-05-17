@@ -1,22 +1,31 @@
 import './App.css';
-import Banner from './components/Banner';
+import { Outlet, Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav';
-import styled from 'styled-components';
+import LoginPage from './pages/LoginPage';
+import MainPage from './pages/MainPage';
+import DetailPage from './pages/DetailPage';
+import SearchPage from './pages/SearchPage';
+
+const LayOut = () => {
+  return (
+    <>
+      <Nav></Nav>
+      <Outlet />
+    </>
+  );
+};
 
 function App() {
   return (
-    <Container>
-      <Nav></Nav>
-      <Banner />
-    </Container>
+    <Routes>
+      <Route path="/" element={<LayOut />}>
+        <Route index element={<LoginPage />}></Route>
+        <Route path="main" element={<MainPage />}></Route>
+        <Route path=":movieId" element={<DetailPage />}></Route>
+        <Route path="search" element={<SearchPage />}></Route>
+      </Route>
+    </Routes>
   );
 }
-
-const Container = styled.div`
-  position: relative;
-  display: block;
-  top: 70px;
-  padding: 0 calc(3.5vw + 5px);
-`;
 
 export default App;

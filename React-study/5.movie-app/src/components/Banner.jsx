@@ -24,7 +24,6 @@ const Banner = () => {
       params: { append_to_response: 'videos' },
     });
     setMovie(movieDetail);
-    console.log(movieDetail);
   };
 
   const truncate = (str, num) => {
