@@ -132,9 +132,44 @@
 // repeat('ex2', 1000);
 // repeat('in', 1000);
 
-function count(n) {
-  if (n < 0) return;
-  console.log(n);
-  count(n - 1);
-}
-count(10);
+// function count(n) {
+//   if (n < 0) return;
+//   console.log(n);
+//   count(n - 1);
+// }
+// count(10);
+
+// function Circle(radius) {
+//   this.radius = radius;
+//   this.getDiameter = function () {
+//     return 2 * radius;
+//   };
+// }
+
+// const circle1 = new Circle(5);
+
+// console.log(circle1);
+
+// const circle3 = Circle(15);
+// console.log(circle3);
+// console.log(global.radius);
+
+// function foo() {
+//   console.log(this);
+// }
+
+// const obj = { foo };
+
+// function foo() {}
+
+// console.log(foo());
+
+// console.log(new foo());
+
+// const numObj = new Number(123);
+// console.log(numObj);
+
+// const foo = function () {
+//   console.log(this);
+// };
+// foo();

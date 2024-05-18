@@ -6,15 +6,6 @@ import MainPage from './pages/MainPage';
 import DetailPage from './pages/DetailPage';
 import SearchPage from './pages/SearchPage';
 
-const LayOut = () => {
-  return (
-    <>
-      <Nav></Nav>
-      <Outlet />
-    </>
-  );
-};
-
 function App() {
   return (
     <Routes>
@@ -27,5 +18,14 @@ function App() {
     </Routes>
   );
 }
+
+const LayOut = () => {
+  return (
+    <>
+      <Nav></Nav>
+      <Outlet />
+    </>
+  );
+};
 
 export default App;
