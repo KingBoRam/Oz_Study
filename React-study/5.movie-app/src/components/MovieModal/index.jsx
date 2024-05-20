@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { imageBasePath } from '../../constant';
 import './MovieModal.css';
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 
 const MovieModal = ({
   backdrop_path,
@@ -12,10 +13,19 @@ const MovieModal = ({
   vote_average,
   setModalOpen,
 }) => {
+  const ref = useRef(null);
+
+  console.log(ref);
+
+  useOnClickOutside(ref, () => {
+    setModalOpen(false);
+  });
+
   return (
     <div className="presentation" role="presentation">
       <div className="wrapper-modal">
-        <div className="modal">
+        <div className="modal" ref={ref}>
+          {console.log(ref)}
           <span onClick={() => setModalOpen(false)} className="modal-close">
             X
           </span>
