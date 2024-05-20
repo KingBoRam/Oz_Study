@@ -26,28 +26,25 @@ const DetailPage = () => {
   };
 
   return (
-    <section className="search-container">
+    <section className="detail-container">
       <img
         className="movie-image"
         src={`${imageBasePath}${movie.backdrop_path}`}
         alt="detail"
       />
-      <p className="search-title">{movie.original_title}</p>
-      <p className="search-genres">
+      <p className="detail-title">{movie.original_title}</p>
+      <p className="detail-genres">
         {`장르 : `}
         {movie.genres.map((item) => {
-          return (
-            <span className="search-genre" key={item.id}>
-              {item.name}
-            </span>
-          );
+          return <span className="detail-genre">{item.name}</span>;
         })}
       </p>
-      <p className="search-average">{`평점 : ${movie.vote_average}`}</p>
-      <p className="search-summary">{`줄거리 : ${summeryText(
-        movie.overview,
-        200,
-      )}`}</p>
+      <p className="detail-average">{`평점 : ${movie.vote_average}`}</p>
+      <p className="detail-summary">{`줄거리 : ${
+        movie.overview === ''
+          ? '등록되지 않음.'
+          : summeryText(movie.overview, 200)
+      }`}</p>
     </section>
   );
 };

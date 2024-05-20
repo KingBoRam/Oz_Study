@@ -1,6 +1,6 @@
-.search-container {
+.detail-container {
   position: relative;
-  top: 70px;
+  top: 100px;
   width: 900px;
   height: 100vh;
   display: flex;
@@ -15,12 +15,12 @@
   width: 100%;
 }
 
-.search-title {
+.detail-title {
   font-size: 2rem;
   font-weight: 900;
 }
 
-.search-summary {
+.detail-summary {
   width: 100%;
   text-align: start;
   background-color: rgba(160, 160, 160, 30%);
@@ -30,19 +30,19 @@
   box-sizing: border-box;
 }
 
-.search-genre {
+.detail-genre {
   background-color: rgb(242, 242, 242);
   color: black;
   padding: 3px 10px;
   margin: 2px;
   border-radius: 5px;
 }
-.search-genre:hover {
+.detail-genre:hover {
   background-color: rgb(206, 206, 206);
 }
 
 @media screen and (max-width: 1360px) {
-  .search-container {
+  .detail-container {
     width: 700px;
     transition: all 0.2s linear;
   }
