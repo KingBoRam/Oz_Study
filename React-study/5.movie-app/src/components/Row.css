@@ -96,3 +96,34 @@
     max-height: 100px;
   }
 }
+
+.swiper-pagination-bullet {
+  background: gray !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+
+.swiper-button-prev {
+  color: white !important;
+}
+
+.swiper-button-prev::after {
+  color: white !important;
+  font-size: 2rem !important;
+}
+
+.swiper-button-next {
+  color: white !important;
+}
+
+.swiper-button-next::after {
+  color: white !important;
+  font-size: 2rem !important;
+}
+
+.swiper-pagination-horizontal {
+  display: none;
+}
