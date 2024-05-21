@@ -9,13 +9,13 @@ const DetailPage = () => {
 
   const [movie, setMovie] = useState(null);
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const response = await axios.get(`/movie/${movieId}`);
-  //     setMovie(response.data);
-  //   }
-  //   fetchData();
-  // }, [movieId]);
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(`/movie/${movieId}`);
+      setMovie(response.data);
+    }
+    fetchData();
+  }, [movieId]);
 
   const summeryText = (str, num) => {
     return str?.length > num ? str.substring(0, num) + '...' : str;
@@ -34,7 +34,11 @@ const DetailPage = () => {
       <p className="detail-genres">
         {`장르 : `}
         {movie.genres.map((item) => {
-          return <span className="detail-genre">{item.name}</span>;
+          return (
+            <span className="detail-genre" key={item.id}>
+              {item.name}
+            </span>
+          );
         })}
       </p>
       <p className="detail-average">{`평점 : ${movie.vote_average}`}</p>
