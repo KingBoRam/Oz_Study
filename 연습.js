@@ -173,3 +173,12 @@
 //   console.log(this);
 // };
 // foo();
+
+function Circle(radius) {
+  this.radius = radius;
+  this.getDiameter = function () {
+    return 2 * radius;
+  };
+}
+
+const circle1 = new Circle(5);
