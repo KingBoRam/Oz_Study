@@ -9,22 +9,20 @@ const DetailPage = () => {
 
   const [movie, setMovie] = useState(null);
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await axios.get(`/movie/${movieId}`);
-      setMovie(response.data);
-    }
-    fetchData();
-  }, [movieId]);
-  console.log(movie);
-  if (!movie) {
-    return null;
-  }
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const response = await axios.get(`/movie/${movieId}`);
+  //     setMovie(response.data);
+  //   }
+  //   fetchData();
+  // }, [movieId]);
 
   const summeryText = (str, num) => {
     return str?.length > num ? str.substring(0, num) + '...' : str;
   };
-
+  if (!movie) {
+    return null;
+  }
   return (
     <section className="detail-container">
       <img

@@ -1,14 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signOut,
+} from 'firebase/auth';
+import app from '../firebase';
+
+const initialUserData = localStorage.getItem('userData')
+  ? JSON.parse(localStorage.getItem('userData'))
+  : {};
 
 const Nav = () => {
   const [show, setShow] = useState('false');
-
   const [searchValue, setSearchValue] = useState('');
+  const [userData, setUserData] = useState(initialUserData);
 
+  const { pathname } = useLocation();
+  const auth = getAuth(app);
+  const provieder = new GoogleAuthProvider();
   const navigate = useNavigate();
 
+  // 스크롤 이벤트를 위한 예제로 딱히 없어도 됨
   const listener = () => {
     if (window.scrollY > 50) {
       setShow('true');
@@ -16,17 +32,50 @@ const Nav = () => {
       setShow('false');
     }
   };
-
   useEffect(() => {
     window.addEventListener('scroll', listener);
     return () => {
       window.removeEventListener('scroll', listener);
     };
   }, []);
+  // 요기까지 ㅎㅎ
 
   const handleChange = (e) => {
     setSearchValue(e.target.value);
     navigate(`/search?q=${e.target.value}`);
+  };
+
+  const handleAuth = () => {
+    signInWithPopup(auth, provieder)
+      .then((res) => {
+        console.log(res);
+        setUserData(res.user);
+        localStorage.setItem('userData', JSON.stringify(res.user));
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        navigate('/');
+      } else if (user && pathname === '/') {
+        navigate('/main');
+      }
+    });
+  }, [auth, navigate, pathname]);
+
+  const handleLogOut = () => {
+    signOut(auth)
+      .then(() => {
+        setUserData({});
+        localStorage.removeItem('userData');
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
   };
 
   return (
@@ -40,14 +89,25 @@ const Nav = () => {
           }}
         />
       </Logo>
-      <Input
-        type="text"
-        placeholder="영화를 검색해주세요."
-        className="nav__input"
-        value={searchValue}
-        onChange={handleChange}
-      ></Input>
-      <Login>로그인</Login>
+      {pathname === '/' ? (
+        <Login onClick={handleAuth}>로그인</Login>
+      ) : (
+        <Input
+          type="text"
+          placeholder="영화를 검색해주세요."
+          className="nav__input"
+          value={searchValue}
+          onChange={handleChange}
+        ></Input>
+      )}
+      {pathname !== '/' ? (
+        <SignOut>
+          <UserImg src={userData.photoURL} alt={userData.displayName}></UserImg>
+          <DropDown>
+            <span onClick={handleLogOut}>Sign Out</span>
+          </DropDown>
+        </SignOut>
+      ) : null}
     </NavWrapper>
   );
 };
@@ -73,9 +133,46 @@ const Login = styled.a`
   transition: all 0.2s ease;
 
   &:hover {
-    background.color: #f9f9f9;
+    background-color: #f9f9f9;
     color: #000;
     border-color: transparent;
+  }
+`;
+
+const UserImg = styled.img`
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+`;
+
+const DropDown = styled.div`
+  position: absolute;
+  top: 48px;
+  right: 0px;
+  background-color: rgb(19, 19, 19);
+  border: 1px solid rgba(151, 151, 151, 0.34);
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 /50%) 0px 0px 18px 0px;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  width: 100px;
+  opacity: 0;
+`;
+
+const SignOut = styled.div`
+  position: relative;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    ${DropDown} {
+      opacity: 1;
+      transition-duration: 1s;
+    }
   }
 `;
 

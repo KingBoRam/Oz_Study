@@ -124,6 +124,6 @@
   font-size: 2rem !important;
 }
 
-.swiper-pagination-horizontal {
-  display: none;
+.swiper-scrollbar-drag {
+  display: none !important;
 }
