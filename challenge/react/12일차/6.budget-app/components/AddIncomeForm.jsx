@@ -10,7 +10,7 @@ const AddIncomeForm = () => {
   const handleAdd = () => {
     dispatch({
       type: 'ADD_INCOMES',
-      payload: { id: crypto.randomUUID(), name: value, cost: number },
+      payload: { id: crypto.randomUUID(), name: value, cost: Number(number) },
     });
     setValue('');
     setNumber(0);

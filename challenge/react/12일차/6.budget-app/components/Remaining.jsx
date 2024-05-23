@@ -12,6 +12,7 @@ const Remaining = () => {
   const totalIncomes = incomes.reduce((total, item) => {
     return (total += item.cost);
   }, 0);
+  console.log(totalIncomes);
 
   const remainingCost = totalIncomes - totalExpenses;
 
