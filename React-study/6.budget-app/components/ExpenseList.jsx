@@ -5,10 +5,8 @@ import ExpenseItem from '../components/ExpenseItem';
 const ExpenseList = () => {
   console.log('랜더링됨');
   const { expenses } = useContext(AppContext);
-  console.log(expenses);
 
   const [filteredExpenses, setFilteredExpenses] = useState(expenses || []);
-  console.log(filteredExpenses);
 
   useEffect(() => {
     setFilteredExpenses(expenses);
@@ -20,7 +18,8 @@ const ExpenseList = () => {
     });
     setFilteredExpenses(searchResults);
   };
-
+  console.log(expenses);
+  console.log(filteredExpenses);
   return (
     <>
       <input
