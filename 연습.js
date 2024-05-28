@@ -174,11 +174,16 @@
 // };
 // foo();
 
-function Circle(radius) {
-  this.radius = radius;
-  this.getDiameter = function () {
-    return 2 * radius;
-  };
-}
+// function Circle(radius) {
+//   this.radius = radius;
+//   this.getDiameter = function () {
+//     return 2 * radius;
+//   };
+// }
 
-const circle1 = new Circle(5);
+// const circle1 = new Circle(5);
+
+const count = useSelector((state) => {
+  console.log(state);
+  return state.value;
+});

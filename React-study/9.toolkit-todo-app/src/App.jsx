@@ -1,22 +1,22 @@
-import { useState } from 'react';
-import './App.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, deleteTodo, editTodo, toggleTodo } from './store/todoSlice';
+import {useState} from "react";
+import "./App.css";
+import {useDispatch, useSelector} from "react-redux";
+import {addTodo, deleteTodo, editTodo, toggleTodo} from "./store/todoSlice";
 
 function App() {
   const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
 
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [editId, setEditId] = useState(null);
-  const [editText, setEditText] = useState('');
+  const [editText, setEditText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (text.trim().length !== 0) {
       dispatch(addTodo(text));
     }
-    setText('');
+    setText("");
   };
   const handleDelete = (id) => {
     dispatch(deleteTodo(id));
@@ -27,14 +27,14 @@ function App() {
   };
   const handleEditCancle = () => {
     setEditId(null);
-    setEditText('');
+    setEditText("");
   };
   const handleEditSave = () => {
-    if (editText.trim() !== '') {
-      dispatch(editTodo({ id: editId, newText: editText }));
+    if (editText.trim() !== "") {
+      dispatch(editTodo({id: editId, newText: editText}));
     }
     setEditId(null);
-    setEditText('');
+    setEditText("");
   };
   return (
     <div>
@@ -57,8 +57,7 @@ function App() {
                     value={editText}
                     onChange={(e) => {
                       setEditText(e.target.value);
-                    }}
-                  ></input>
+                    }}></input>
                   <button onClick={handleEditSave}>Save</button>
                   <button onClick={handleEditCancle}>Cancel</button>
                 </>
