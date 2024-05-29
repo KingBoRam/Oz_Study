@@ -9,5 +9,5 @@ test("renders learn react link", () => {
   const lintTest = screen.getByRole("button", {
     name: "lintTest",
   });
-  expect(lintTest.textContent).toBe("lintTest");
+  expect(lintTest).toHaveTextContent("lintTest");
 });
