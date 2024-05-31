@@ -1,18 +1,15 @@
 import React, {useRef} from "react";
 import classes from "./NewMeetupForm.module.css";
 import Card from "../ui/Card";
-import {useRouter} from "next/router";
 
-const NewMeetupForm = () => {
-  const router = useRouter();
-
+const NewMeetupForm = ({router}) => {
   const titleInputRef = useRef();
   const imgInputRef = useRef();
   const addressInputRef = useRef();
   const descriptionInputRef = useRef();
 
   const handleSubmit = (e) => {
-    e.preventDefauit();
+    e.preventDefault();
     const enteredTitle = titleInputRef.current.value;
     const enteredImage = imgInputRef.current.value;
     const enteredAddress = addressInputRef.current.value;
@@ -20,7 +17,7 @@ const NewMeetupForm = () => {
 
     const meetupData = {
       title: enteredTitle,
-      images: enteredImage,
+      image: enteredImage,
       address: enteredAddress,
       description: enteredDescription,
     };
@@ -64,9 +61,7 @@ const NewMeetupForm = () => {
             required
             rows="5"
             id="description"
-            ref={descriptionInputRef}>
-            {" "}
-          </textarea>
+            ref={descriptionInputRef}></textarea>
         </div>
         <div className={classes.actions}>
           <button>모임 생성하기</button>

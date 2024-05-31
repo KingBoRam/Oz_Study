@@ -1,7 +1,21 @@
 import React from "react";
+import MeetupItem from "./MeetupItem";
 
-const MeetupList = () => {
-  return <div>MeetupList</div>;
+const MeetupList = ({meetups}) => {
+  return (
+    <ul>
+      {meetups.map((meetup) => {
+        return (
+          <MeetupItem
+            key={meetup.id}
+            id={meetup.id}
+            image={meetup.image}
+            title={meetup.title}
+            address={meetup.address}></MeetupItem>
+        );
+      })}
+    </ul>
+  );
 };
 
 export default MeetupList;
