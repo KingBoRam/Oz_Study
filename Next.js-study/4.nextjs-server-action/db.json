@@ -1,0 +1,22 @@
+{
+  "todos": [
+    {
+      "userId": 1,
+      "title": "밥먹기",
+      "completed": true,
+      "id": "3"
+    },
+    {
+      "userId": 2,
+      "title": "운동하기",
+      "completed": false,
+      "id": "4"
+    },
+    {
+      "id": "fab6",
+      "userId": 1,
+      "title": "1234",
+      "completed": false
+    }
+  ]
+}
