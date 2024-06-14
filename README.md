@@ -1,6 +1,13 @@
-# 오즈 코딩 스쿨
+![transparent](https://capsule-render.vercel.app/api?type=transparent&fontColor=6700e6&text=Oz_CodingSchool&height=130&fontSize=60)
+
 FrontEnd 3기 2024.3.21 ~ 2024.9.12
 
-- Study : html, css, javscript, git, node.js, react, next.js 수업 내용
-- challenge : 수엽 후 복습과 깊은 이해를 위해 스스로 작성하는 필수 과제
-- optionalTask : 필수 과제를 심화 주어지는 작성한 선택 과제
+## 학습 내용
+
+
+- **<a href="https://github.com/KingBoRam/Oz_study/tree/main/Study">Study</a>**: HTML, CSS, JavaScript, Git, Node.js, React, Next.js, mysql
+  
+- **<a href="https://github.com/KingBoRam/Oz_study/tree/main/Challenge">Challenge</a>**: 필수 과제 - 수업 후 복습 및 깊은 이해를 위한 과제
+  
+- **<a href="https://github.com/KingBoRam/Oz_study/tree/main/OptionalTask">OptionalTask</a>**: 선택 과제 - 필수 과제를 심화
+  
