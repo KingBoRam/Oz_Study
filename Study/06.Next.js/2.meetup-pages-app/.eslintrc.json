@@ -1,0 +1,6 @@
+{
+  "extends": ["next/babel", "next/core-web-vitals"]
+}
+
+
+// https://velog.io/@pyotato/Error-Issues-Parsing-error-Cannot-find-module-nextbabel

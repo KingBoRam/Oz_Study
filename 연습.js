@@ -183,7 +183,38 @@
 
 // const circle1 = new Circle(5);
 
-const count = useSelector((state) => {
-  console.log(state);
-  return state.value;
-});
+// const count = useSelector((state) => {
+//   console.log(state);
+//   return state.value;
+// });
+// const 실행컨텍스트 = {
+//   "렉시컬 환경": {
+//     "환경 레코드(변수관리)": {
+//       "객체 환경 레코드(var)": {
+//         'BindingObject': {
+//           x: undefined,
+//           foo : <funtion object>,
+//         }
+//       },
+//       "선언적 환경 레코드(let, const)": {
+//         y : <uninitialized>,
+//       },
+//       "this 바인딩": [[GlobalThisValue]],
+//     },
+//     "외부 환경에 대한 참조(상위스코프)": null,
+//   },
+// };
+
+// var x = 1;
+// const y = 2;
+// function foo(a) {
+//   var x = 3;
+//   const y = 4;
+//   function bar(b) {
+//     const z = 5;
+//     console.log(a + b + x + y + z);
+//   }
+//   bar(10);
+// }
+// foo(20);
+console.log(Object.getOwnPropertyDescriptors([1, 2, 3]));
