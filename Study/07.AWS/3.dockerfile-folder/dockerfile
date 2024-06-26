@@ -1,0 +1,8 @@
+# base이미지 명시
+FROM alpine
+
+# 추가로 필요한 파일 다운로드
+# RUN command
+
+# 컨테이너를 시작할 명령어
+CMD [ "echo", "hello" ]

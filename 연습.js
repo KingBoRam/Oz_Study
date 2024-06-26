@@ -217,4 +217,15 @@
 //   bar(10);
 // }
 // foo(20);
-console.log(Object.getOwnPropertyDescriptors([1, 2, 3]));
+// console.log(Object.getOwnPropertyDescriptors([1, 2, 3]));
+const numbers = [1, 2, , 3];
+console.log(typeof numbers.length);
+// const results = numbers.map((item) => item + 1);
+// console.log(results);
+// const res = [1, 10, 2, 25].sort((a, b) => b - a);
+// console.log(res);
+// const arr = [0];
+// arr[1] = 1;
+// console.log(arr); // [0, 1]
+// arr[3] = 4;
+// console.log(arr);
