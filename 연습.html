@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,5 +8,32 @@
   </head>
   <body>
     <div>Typescript</div>
+  </body>
+</html> -->
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reflow</title>
+    <style>
+      .box {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      // Reflow를 발생시키는 코드
+      const $box = document.querySelector(".box");
+      $box.onclick = () => {
+        $box.style.width = "200px";
+        $box.style.height = "200px";
+      };
+    </script>
   </body>
 </html>
